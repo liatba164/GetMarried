@@ -1,0 +1,108 @@
+.contain{
+  width: 82vw;
+    margin:3% auto;
+}
+
+.mat-card{
+  padding: 7px;
+    margin: 23px;
+    display: inline-block;
+    position: relative;
+    background-size: 17vw 40vh;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 16vw;
+    height: 37vh;
+}
+
+.overlay {   
+    position: absolute;
+    bottom: 0;
+    left: 100%;
+    right: 0;
+    background-color: #00000075;
+    overflow: hidden;
+    width: 0;
+    height: 100%;
+    transition: .9s ease;
+  }
+  
+  .mat-card:hover .overlay {
+    width: 100%;
+    left: 0;
+    bottom: 0;
+  height: 100%;
+  }
+  
+
+ .text{
+  white-space: nowrap; 
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  overflow: hidden;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+ }   
+
+
+   
+
+.blog{
+  text-align: center;
+  border-top: 3px solid #a4a4a4;
+  border-bottom: 3px solid #a4a4a4;
+  margin-top: -5px;
+  padding: 10px 0;
+  width:81%;
+  margin:auto;
+
+}
+
+.blog_img{
+    width: 81%;
+    display: block;
+    margin: 7% auto 0%;}
+
+
+.article-item {
+  display: inline-block;
+  white-space: normal;
+  width: 33%;
+  height: 100%;
+  position: relative;
+  text-align: center;
+  cursor: pointer;
+}
+
+.item-content {
+  position: absolute;
+  width: 54%;
+  height: 46%;
+  background: #f3ecec;
+  bottom: -11%;
+  left: 45%;
+  margin-left: -36%;
+  padding: 7% 13%;
+
+}
+
+.margin-right{
+  margin-right: 16%;
+}
+
+img{
+  height: 65vh;
+      width: 25vw;
+      margin: 13% 4%;
+}
+hr{
+  height: 3px;
+  background-color: rgb(192 132 102);
+}
+
+.margin-bottom{
+  margin-bottom: 15%;
+}

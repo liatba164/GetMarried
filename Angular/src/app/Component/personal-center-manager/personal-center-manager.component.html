@@ -1,0 +1,32 @@
+<mat-sidenav-container>
+  <mat-sidenav #sidenav mode="over" position="end" [(opened)]="opened">
+    <div>
+      <button (click)="sidenav.close()" class="close">
+        <mat-icon class="material-icons">arrow_forward</mat-icon>
+      </button>
+      <div routerLink="/PersonalCenterManager/ShowNewSupplier" (click)="sidenav.close()">
+        <mat-icon class="material-icons">mood</mat-icon><span>ספקים חדשים</span>
+      </div>
+      <div routerLink="/PersonalCenterManager/AddSupplier" (click)="sidenav.close()">
+        <mat-icon class="material-icons">person_add</mat-icon><span>הוספת ספק</span>
+      </div>
+      <div routerLink="/PersonalCenterManager/DeleteSupplier" (click)="sidenav.close()">
+        <mat-icon class="material-icons">list_alt</mat-icon><span>רשימת ספקים</span>
+      </div>
+      <div (click)="openDialog()">
+        <mat-icon class="material-icons">power_settings_new</mat-icon><span>התנתקות</span>
+      </div>
+    </div>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <main>
+      <router-outlet></router-outlet>
+    </main>
+    <button (click)="sidenav.open()" class="menu">
+      <mat-icon class="material-icons">menu</mat-icon>
+    </button>
+  </mat-sidenav-content>
+
+
+</mat-sidenav-container>

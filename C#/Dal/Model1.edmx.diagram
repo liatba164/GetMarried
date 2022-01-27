@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="547b1f7a3aa84a3da4502233319928a4" Name="Diagram1" ZoomLevel="72">
+        <EntityTypeShape EntityType="WeddingModel.Address" Width="1.5" PointX="3.75" PointY="13" />
+        <EntityTypeShape EntityType="WeddingModel.Area" Width="1.5" PointX="0.75" PointY="8.375" />
+        <EntityTypeShape EntityType="WeddingModel.Categories" Width="1.5" PointX="6" PointY="14" />
+        <EntityTypeShape EntityType="WeddingModel.ContactUs" Width="1.5" PointX="0.75" PointY="0.875" />
+        <EntityTypeShape EntityType="WeddingModel.Customers" Width="1.5" PointX="6" PointY="2.5" />
+        <EntityTypeShape EntityType="WeddingModel.halls" Width="1.5" PointX="6" PointY="6.625" />
+        <EntityTypeShape EntityType="WeddingModel.HallType" Width="1.5" PointX="3.75" PointY="18.25" />
+        <EntityTypeShape EntityType="WeddingModel.Img" Width="1.5" PointX="8.25" PointY="8" />
+        <EntityTypeShape EntityType="WeddingModel.Invited" Width="1.5" PointX="3.75" PointY="3.75" />
+        <EntityTypeShape EntityType="WeddingModel.Kashrut" Width="1.5" PointX="3.75" PointY="16" />
+        <EntityTypeShape EntityType="WeddingModel.Opinion" Width="1.5" PointX="11.25" PointY="7.875" />
+        <EntityTypeShape EntityType="WeddingModel.ProductsToCustomers" Width="1.5" PointX="8.25" PointY="3.875" />
+        <EntityTypeShape EntityType="WeddingModel.Service" Width="1.5" PointX="6" PointY="17.25" />
+        <EntityTypeShape EntityType="WeddingModel.ServToSupp" Width="1.5" PointX="8.25" PointY="11.25" />
+        <EntityTypeShape EntityType="WeddingModel.Suppliers" Width="1.5" PointX="3" PointY="7" />
+        <EntityTypeShape EntityType="WeddingModel.Tasks" Width="1.5" PointX="6" PointY="21" />
+        <EntityTypeShape EntityType="WeddingModel.TasksToCustomer" Width="1.5" PointX="8.25" PointY="0.75" />
+        <AssociationConnector Association="WeddingModel.FK__halls__idAddress__46E78A0C" />
+        <AssociationConnector Association="WeddingModel.FK__Suppliers__idAdd__4D94879B" />
+        <AssociationConnector Association="WeddingModel.FK__halls__idArea__45F365D3" />
+        <AssociationConnector Association="WeddingModel.FK__Suppliers__idAre__4CA06362" />
+        <AssociationConnector Association="WeddingModel.FK__Img__idCategory__59063A47" />
+        <AssociationConnector Association="WeddingModel.FK__ProductsT__idCat__5629CD9C" />
+        <AssociationConnector Association="WeddingModel.FK__Service__idCateg__3E52440B" />
+        <AssociationConnector Association="WeddingModel.FK__Suppliers__idCat__4BAC3F29" />
+        <AssociationConnector Association="WeddingModel.FK__Opinion__idCusto__5DCAEF64" />
+        <AssociationConnector Association="WeddingModel.FK__ProductsT__idCus__534D60F1" />
+        <AssociationConnector Association="WeddingModel.FK__TasksToCu__idCus__6A30C649" />
+        <AssociationConnector Association="WeddingModel.FK__halls__idInvited__48CFD27E" />
+        <AssociationConnector Association="WeddingModel.FK__halls__idKashrut__47DBAE45" />
+        <AssociationConnector Association="WeddingModel.FK__halls__idtype__44FF419A" />
+        <AssociationConnector Association="WeddingModel.FK__Img__idHall__5AEE82B9" />
+        <AssociationConnector Association="WeddingModel.FK__Opinion__idHall__5FB337D6" />
+        <AssociationConnector Association="WeddingModel.FK__ProductsT__idHal__5535A963" />
+        <AssociationConnector Association="WeddingModel.FK__Img__idSuppliers__59FA5E80" />
+        <AssociationConnector Association="WeddingModel.FK__Opinion__idSuppl__5EBF139D" />
+        <AssociationConnector Association="WeddingModel.FK__ProductsT__idSup__5441852A" />
+        <AssociationConnector Association="WeddingModel.FK__ServToSup__idSer__656C112C" />
+        <AssociationConnector Association="WeddingModel.FK__ServToSup__idSup__6477ECF3" />
+        <AssociationConnector Association="WeddingModel.FK__TasksToCu__idTas__6B24EA82" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

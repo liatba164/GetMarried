@@ -1,0 +1,1379 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="WeddingModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Address">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="city" Type="nvarchar" MaxLength="30" />
+          <Property Name="number" Type="int" />
+          <Property Name="street" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Area">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="area" Type="nvarchar" MaxLength="90" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Categories">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="ContactUs">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" />
+          <Property Name="email" Type="nvarchar" MaxLength="30" />
+          <Property Name="phone" Type="nvarchar" MaxLength="15" />
+          <Property Name="message" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="Customers">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="mail" Type="nvarchar" MaxLength="50" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="phone" Type="nvarchar" MaxLength="10" />
+          <Property Name="password" Type="nvarchar" MaxLength="20" />
+          <Property Name="src_profile" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="halls">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="phone" Type="nvarchar" MaxLength="15" Nullable="false" />
+          <Property Name="minInvited" Type="int" />
+          <Property Name="maxInvited" Type="int" />
+          <Property Name="minPrice" Type="int" />
+          <Property Name="maxPrice" Type="int" />
+          <Property Name="description" Type="nvarchar" MaxLength="2500" />
+          <Property Name="src" Type="nvarchar(max)" />
+          <Property Name="srcLogo" Type="nvarchar(max)" />
+          <Property Name="idtype" Type="int" Nullable="false" />
+          <Property Name="idArea" Type="int" Nullable="false" />
+          <Property Name="idAddress" Type="int" Nullable="false" />
+          <Property Name="idKashrut" Type="int" Nullable="false" />
+          <Property Name="idInvited" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="HallType">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="type" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Img">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="src" Type="nvarchar(max)" />
+          <Property Name="idCategory" Type="int" Nullable="false" />
+          <Property Name="idSuppliers" Type="int" />
+          <Property Name="idHall" Type="int" />
+        </EntityType>
+        <EntityType Name="Invited">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="invited" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Kashrut">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="kashrut" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Opinion">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="opinion" Type="nvarchar(max)" />
+          <Property Name="rating" Type="int" />
+          <Property Name="weddindDate" Type="date" />
+          <Property Name="idCustomer" Type="int" Nullable="false" />
+          <Property Name="idSuppliers" Type="int" />
+          <Property Name="idHall" Type="int" />
+        </EntityType>
+        <EntityType Name="ProductsToCustomers">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idCustomer" Type="int" Nullable="false" />
+          <Property Name="idSuppliers" Type="int" />
+          <Property Name="idHalls" Type="int" />
+          <Property Name="idCategory" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Service">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="serv" Type="nvarchar" MaxLength="50" />
+          <Property Name="idCategory" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ServToSupp">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idSuppliers" Type="int" />
+          <Property Name="idServ" Type="int" />
+        </EntityType>
+        <EntityType Name="Suppliers">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="phone" Type="nvarchar" MaxLength="15" />
+          <Property Name="minPrice" Type="int" />
+          <Property Name="maxPrice" Type="int" />
+          <Property Name="activity_time" Type="nvarchar" MaxLength="20" />
+          <Property Name="description" Type="nvarchar" MaxLength="2000" />
+          <Property Name="src" Type="nvarchar(max)" />
+          <Property Name="srcLogo" Type="nvarchar(max)" />
+          <Property Name="idCategory" Type="int" Nullable="false" />
+          <Property Name="idArea" Type="int" Nullable="false" />
+          <Property Name="idAddress" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Tasks">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar(max)" />
+          <Property Name="number" Type="int" />
+        </EntityType>
+        <EntityType Name="TasksToCustomer">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idCustomer" Type="int" Nullable="false" />
+          <Property Name="idTask" Type="int" Nullable="false" />
+          <Property Name="done" Type="bit" />
+        </EntityType>
+        <Association Name="FK__halls__idAddress__46E78A0C">
+          <End Role="Address" Type="Self.Address" Multiplicity="1" />
+          <End Role="halls" Type="Self.halls" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Address">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="halls">
+              <PropertyRef Name="idAddress" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__halls__idArea__45F365D3">
+          <End Role="Area" Type="Self.Area" Multiplicity="1" />
+          <End Role="halls" Type="Self.halls" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Area">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="halls">
+              <PropertyRef Name="idArea" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__halls__idInvited__48CFD27E">
+          <End Role="Invited" Type="Self.Invited" Multiplicity="1" />
+          <End Role="halls" Type="Self.halls" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Invited">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="halls">
+              <PropertyRef Name="idInvited" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__halls__idKashrut__47DBAE45">
+          <End Role="Kashrut" Type="Self.Kashrut" Multiplicity="1" />
+          <End Role="halls" Type="Self.halls" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kashrut">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="halls">
+              <PropertyRef Name="idKashrut" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__halls__idtype__44FF419A">
+          <End Role="HallType" Type="Self.HallType" Multiplicity="1" />
+          <End Role="halls" Type="Self.halls" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HallType">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="halls">
+              <PropertyRef Name="idtype" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Img__idCategory__59063A47">
+          <End Role="Categories" Type="Self.Categories" Multiplicity="1" />
+          <End Role="Img" Type="Self.Img" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Categories">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Img">
+              <PropertyRef Name="idCategory" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Img__idHall__5AEE82B9">
+          <End Role="halls" Type="Self.halls" Multiplicity="0..1" />
+          <End Role="Img" Type="Self.Img" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="halls">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Img">
+              <PropertyRef Name="idHall" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Img__idSuppliers__59FA5E80">
+          <End Role="Suppliers" Type="Self.Suppliers" Multiplicity="0..1" />
+          <End Role="Img" Type="Self.Img" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Suppliers">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Img">
+              <PropertyRef Name="idSuppliers" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Opinion__idCusto__5DCAEF64">
+          <End Role="Customers" Type="Self.Customers" Multiplicity="1" />
+          <End Role="Opinion" Type="Self.Opinion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customers">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Opinion">
+              <PropertyRef Name="idCustomer" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Opinion__idHall__5FB337D6">
+          <End Role="halls" Type="Self.halls" Multiplicity="0..1" />
+          <End Role="Opinion" Type="Self.Opinion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="halls">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Opinion">
+              <PropertyRef Name="idHall" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Opinion__idSuppl__5EBF139D">
+          <End Role="Suppliers" Type="Self.Suppliers" Multiplicity="0..1" />
+          <End Role="Opinion" Type="Self.Opinion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Suppliers">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Opinion">
+              <PropertyRef Name="idSuppliers" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ProductsT__idCat__5629CD9C">
+          <End Role="Categories" Type="Self.Categories" Multiplicity="1" />
+          <End Role="ProductsToCustomers" Type="Self.ProductsToCustomers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Categories">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="ProductsToCustomers">
+              <PropertyRef Name="idCategory" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ProductsT__idCus__534D60F1">
+          <End Role="Customers" Type="Self.Customers" Multiplicity="1" />
+          <End Role="ProductsToCustomers" Type="Self.ProductsToCustomers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customers">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="ProductsToCustomers">
+              <PropertyRef Name="idCustomer" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ProductsT__idHal__5535A963">
+          <End Role="halls" Type="Self.halls" Multiplicity="0..1" />
+          <End Role="ProductsToCustomers" Type="Self.ProductsToCustomers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="halls">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="ProductsToCustomers">
+              <PropertyRef Name="idHalls" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ProductsT__idSup__5441852A">
+          <End Role="Suppliers" Type="Self.Suppliers" Multiplicity="0..1" />
+          <End Role="ProductsToCustomers" Type="Self.ProductsToCustomers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Suppliers">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="ProductsToCustomers">
+              <PropertyRef Name="idSuppliers" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Service__idCateg__3E52440B">
+          <End Role="Categories" Type="Self.Categories" Multiplicity="1" />
+          <End Role="Service" Type="Self.Service" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Categories">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Service">
+              <PropertyRef Name="idCategory" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ServToSup__idSer__656C112C">
+          <End Role="Service" Type="Self.Service" Multiplicity="0..1" />
+          <End Role="ServToSupp" Type="Self.ServToSupp" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Service">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="ServToSupp">
+              <PropertyRef Name="idServ" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ServToSup__idSup__6477ECF3">
+          <End Role="Suppliers" Type="Self.Suppliers" Multiplicity="0..1" />
+          <End Role="ServToSupp" Type="Self.ServToSupp" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Suppliers">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="ServToSupp">
+              <PropertyRef Name="idSuppliers" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Suppliers__idAdd__4D94879B">
+          <End Role="Address" Type="Self.Address" Multiplicity="1" />
+          <End Role="Suppliers" Type="Self.Suppliers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Address">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Suppliers">
+              <PropertyRef Name="idAddress" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Suppliers__idAre__4CA06362">
+          <End Role="Area" Type="Self.Area" Multiplicity="1" />
+          <End Role="Suppliers" Type="Self.Suppliers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Area">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Suppliers">
+              <PropertyRef Name="idArea" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Suppliers__idCat__4BAC3F29">
+          <End Role="Categories" Type="Self.Categories" Multiplicity="1" />
+          <End Role="Suppliers" Type="Self.Suppliers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Categories">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Suppliers">
+              <PropertyRef Name="idCategory" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TasksToCu__idCus__6A30C649">
+          <End Role="Customers" Type="Self.Customers" Multiplicity="1" />
+          <End Role="TasksToCustomer" Type="Self.TasksToCustomer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customers">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="TasksToCustomer">
+              <PropertyRef Name="idCustomer" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TasksToCu__idTas__6B24EA82">
+          <End Role="Tasks" Type="Self.Tasks" Multiplicity="1" />
+          <End Role="TasksToCustomer" Type="Self.TasksToCustomer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tasks">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="TasksToCustomer">
+              <PropertyRef Name="idTask" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="WeddingModelStoreContainer">
+          <EntitySet Name="Address" EntityType="Self.Address" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Area" EntityType="Self.Area" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Categories" EntityType="Self.Categories" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ContactUs" EntityType="Self.ContactUs" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Customers" EntityType="Self.Customers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="halls" EntityType="Self.halls" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="HallType" EntityType="Self.HallType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Img" EntityType="Self.Img" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Invited" EntityType="Self.Invited" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Kashrut" EntityType="Self.Kashrut" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Opinion" EntityType="Self.Opinion" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ProductsToCustomers" EntityType="Self.ProductsToCustomers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Service" EntityType="Self.Service" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ServToSupp" EntityType="Self.ServToSupp" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Suppliers" EntityType="Self.Suppliers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tasks" EntityType="Self.Tasks" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TasksToCustomer" EntityType="Self.TasksToCustomer" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__halls__idAddress__46E78A0C" Association="Self.FK__halls__idAddress__46E78A0C">
+            <End Role="Address" EntitySet="Address" />
+            <End Role="halls" EntitySet="halls" />
+          </AssociationSet>
+          <AssociationSet Name="FK__halls__idArea__45F365D3" Association="Self.FK__halls__idArea__45F365D3">
+            <End Role="Area" EntitySet="Area" />
+            <End Role="halls" EntitySet="halls" />
+          </AssociationSet>
+          <AssociationSet Name="FK__halls__idInvited__48CFD27E" Association="Self.FK__halls__idInvited__48CFD27E">
+            <End Role="Invited" EntitySet="Invited" />
+            <End Role="halls" EntitySet="halls" />
+          </AssociationSet>
+          <AssociationSet Name="FK__halls__idKashrut__47DBAE45" Association="Self.FK__halls__idKashrut__47DBAE45">
+            <End Role="Kashrut" EntitySet="Kashrut" />
+            <End Role="halls" EntitySet="halls" />
+          </AssociationSet>
+          <AssociationSet Name="FK__halls__idtype__44FF419A" Association="Self.FK__halls__idtype__44FF419A">
+            <End Role="HallType" EntitySet="HallType" />
+            <End Role="halls" EntitySet="halls" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Img__idCategory__59063A47" Association="Self.FK__Img__idCategory__59063A47">
+            <End Role="Categories" EntitySet="Categories" />
+            <End Role="Img" EntitySet="Img" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Img__idHall__5AEE82B9" Association="Self.FK__Img__idHall__5AEE82B9">
+            <End Role="halls" EntitySet="halls" />
+            <End Role="Img" EntitySet="Img" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Img__idSuppliers__59FA5E80" Association="Self.FK__Img__idSuppliers__59FA5E80">
+            <End Role="Suppliers" EntitySet="Suppliers" />
+            <End Role="Img" EntitySet="Img" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Opinion__idCusto__5DCAEF64" Association="Self.FK__Opinion__idCusto__5DCAEF64">
+            <End Role="Customers" EntitySet="Customers" />
+            <End Role="Opinion" EntitySet="Opinion" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Opinion__idHall__5FB337D6" Association="Self.FK__Opinion__idHall__5FB337D6">
+            <End Role="halls" EntitySet="halls" />
+            <End Role="Opinion" EntitySet="Opinion" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Opinion__idSuppl__5EBF139D" Association="Self.FK__Opinion__idSuppl__5EBF139D">
+            <End Role="Suppliers" EntitySet="Suppliers" />
+            <End Role="Opinion" EntitySet="Opinion" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ProductsT__idCat__5629CD9C" Association="Self.FK__ProductsT__idCat__5629CD9C">
+            <End Role="Categories" EntitySet="Categories" />
+            <End Role="ProductsToCustomers" EntitySet="ProductsToCustomers" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ProductsT__idCus__534D60F1" Association="Self.FK__ProductsT__idCus__534D60F1">
+            <End Role="Customers" EntitySet="Customers" />
+            <End Role="ProductsToCustomers" EntitySet="ProductsToCustomers" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ProductsT__idHal__5535A963" Association="Self.FK__ProductsT__idHal__5535A963">
+            <End Role="halls" EntitySet="halls" />
+            <End Role="ProductsToCustomers" EntitySet="ProductsToCustomers" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ProductsT__idSup__5441852A" Association="Self.FK__ProductsT__idSup__5441852A">
+            <End Role="Suppliers" EntitySet="Suppliers" />
+            <End Role="ProductsToCustomers" EntitySet="ProductsToCustomers" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Service__idCateg__3E52440B" Association="Self.FK__Service__idCateg__3E52440B">
+            <End Role="Categories" EntitySet="Categories" />
+            <End Role="Service" EntitySet="Service" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ServToSup__idSer__656C112C" Association="Self.FK__ServToSup__idSer__656C112C">
+            <End Role="Service" EntitySet="Service" />
+            <End Role="ServToSupp" EntitySet="ServToSupp" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ServToSup__idSup__6477ECF3" Association="Self.FK__ServToSup__idSup__6477ECF3">
+            <End Role="Suppliers" EntitySet="Suppliers" />
+            <End Role="ServToSupp" EntitySet="ServToSupp" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Suppliers__idAdd__4D94879B" Association="Self.FK__Suppliers__idAdd__4D94879B">
+            <End Role="Address" EntitySet="Address" />
+            <End Role="Suppliers" EntitySet="Suppliers" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Suppliers__idAre__4CA06362" Association="Self.FK__Suppliers__idAre__4CA06362">
+            <End Role="Area" EntitySet="Area" />
+            <End Role="Suppliers" EntitySet="Suppliers" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Suppliers__idCat__4BAC3F29" Association="Self.FK__Suppliers__idCat__4BAC3F29">
+            <End Role="Categories" EntitySet="Categories" />
+            <End Role="Suppliers" EntitySet="Suppliers" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TasksToCu__idCus__6A30C649" Association="Self.FK__TasksToCu__idCus__6A30C649">
+            <End Role="Customers" EntitySet="Customers" />
+            <End Role="TasksToCustomer" EntitySet="TasksToCustomer" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TasksToCu__idTas__6B24EA82" Association="Self.FK__TasksToCu__idTas__6B24EA82">
+            <End Role="Tasks" EntitySet="Tasks" />
+            <End Role="TasksToCustomer" EntitySet="TasksToCustomer" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="WeddingModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="WeddingEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Address" EntityType="WeddingModel.Address" />
+          <EntitySet Name="Area" EntityType="WeddingModel.Area" />
+          <EntitySet Name="Categories" EntityType="WeddingModel.Categories" />
+          <EntitySet Name="ContactUs" EntityType="WeddingModel.ContactUs" />
+          <EntitySet Name="Customers" EntityType="WeddingModel.Customers" />
+          <EntitySet Name="halls" EntityType="WeddingModel.halls" />
+          <EntitySet Name="HallType" EntityType="WeddingModel.HallType" />
+          <EntitySet Name="Img" EntityType="WeddingModel.Img" />
+          <EntitySet Name="Invited" EntityType="WeddingModel.Invited" />
+          <EntitySet Name="Kashrut" EntityType="WeddingModel.Kashrut" />
+          <EntitySet Name="Opinion" EntityType="WeddingModel.Opinion" />
+          <EntitySet Name="ProductsToCustomers" EntityType="WeddingModel.ProductsToCustomers" />
+          <EntitySet Name="Service" EntityType="WeddingModel.Service" />
+          <EntitySet Name="ServToSupp" EntityType="WeddingModel.ServToSupp" />
+          <EntitySet Name="Suppliers" EntityType="WeddingModel.Suppliers" />
+          <EntitySet Name="Tasks" EntityType="WeddingModel.Tasks" />
+          <EntitySet Name="TasksToCustomer" EntityType="WeddingModel.TasksToCustomer" />
+          <AssociationSet Name="FK__halls__idAddress__46E78A0C" Association="WeddingModel.FK__halls__idAddress__46E78A0C">
+            <End Role="Address" EntitySet="Address" />
+            <End Role="halls" EntitySet="halls" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Suppliers__idAdd__4D94879B" Association="WeddingModel.FK__Suppliers__idAdd__4D94879B">
+            <End Role="Address" EntitySet="Address" />
+            <End Role="Suppliers" EntitySet="Suppliers" />
+          </AssociationSet>
+          <AssociationSet Name="FK__halls__idArea__45F365D3" Association="WeddingModel.FK__halls__idArea__45F365D3">
+            <End Role="Area" EntitySet="Area" />
+            <End Role="halls" EntitySet="halls" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Suppliers__idAre__4CA06362" Association="WeddingModel.FK__Suppliers__idAre__4CA06362">
+            <End Role="Area" EntitySet="Area" />
+            <End Role="Suppliers" EntitySet="Suppliers" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Img__idCategory__59063A47" Association="WeddingModel.FK__Img__idCategory__59063A47">
+            <End Role="Categories" EntitySet="Categories" />
+            <End Role="Img" EntitySet="Img" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ProductsT__idCat__5629CD9C" Association="WeddingModel.FK__ProductsT__idCat__5629CD9C">
+            <End Role="Categories" EntitySet="Categories" />
+            <End Role="ProductsToCustomers" EntitySet="ProductsToCustomers" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Service__idCateg__3E52440B" Association="WeddingModel.FK__Service__idCateg__3E52440B">
+            <End Role="Categories" EntitySet="Categories" />
+            <End Role="Service" EntitySet="Service" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Suppliers__idCat__4BAC3F29" Association="WeddingModel.FK__Suppliers__idCat__4BAC3F29">
+            <End Role="Categories" EntitySet="Categories" />
+            <End Role="Suppliers" EntitySet="Suppliers" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Opinion__idCusto__5DCAEF64" Association="WeddingModel.FK__Opinion__idCusto__5DCAEF64">
+            <End Role="Customers" EntitySet="Customers" />
+            <End Role="Opinion" EntitySet="Opinion" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ProductsT__idCus__534D60F1" Association="WeddingModel.FK__ProductsT__idCus__534D60F1">
+            <End Role="Customers" EntitySet="Customers" />
+            <End Role="ProductsToCustomers" EntitySet="ProductsToCustomers" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TasksToCu__idCus__6A30C649" Association="WeddingModel.FK__TasksToCu__idCus__6A30C649">
+            <End Role="Customers" EntitySet="Customers" />
+            <End Role="TasksToCustomer" EntitySet="TasksToCustomer" />
+          </AssociationSet>
+          <AssociationSet Name="FK__halls__idInvited__48CFD27E" Association="WeddingModel.FK__halls__idInvited__48CFD27E">
+            <End Role="Invited" EntitySet="Invited" />
+            <End Role="halls" EntitySet="halls" />
+          </AssociationSet>
+          <AssociationSet Name="FK__halls__idKashrut__47DBAE45" Association="WeddingModel.FK__halls__idKashrut__47DBAE45">
+            <End Role="Kashrut" EntitySet="Kashrut" />
+            <End Role="halls" EntitySet="halls" />
+          </AssociationSet>
+          <AssociationSet Name="FK__halls__idtype__44FF419A" Association="WeddingModel.FK__halls__idtype__44FF419A">
+            <End Role="HallType" EntitySet="HallType" />
+            <End Role="halls" EntitySet="halls" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Img__idHall__5AEE82B9" Association="WeddingModel.FK__Img__idHall__5AEE82B9">
+            <End Role="halls" EntitySet="halls" />
+            <End Role="Img" EntitySet="Img" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Opinion__idHall__5FB337D6" Association="WeddingModel.FK__Opinion__idHall__5FB337D6">
+            <End Role="halls" EntitySet="halls" />
+            <End Role="Opinion" EntitySet="Opinion" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ProductsT__idHal__5535A963" Association="WeddingModel.FK__ProductsT__idHal__5535A963">
+            <End Role="halls" EntitySet="halls" />
+            <End Role="ProductsToCustomers" EntitySet="ProductsToCustomers" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Img__idSuppliers__59FA5E80" Association="WeddingModel.FK__Img__idSuppliers__59FA5E80">
+            <End Role="Suppliers" EntitySet="Suppliers" />
+            <End Role="Img" EntitySet="Img" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Opinion__idSuppl__5EBF139D" Association="WeddingModel.FK__Opinion__idSuppl__5EBF139D">
+            <End Role="Suppliers" EntitySet="Suppliers" />
+            <End Role="Opinion" EntitySet="Opinion" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ProductsT__idSup__5441852A" Association="WeddingModel.FK__ProductsT__idSup__5441852A">
+            <End Role="Suppliers" EntitySet="Suppliers" />
+            <End Role="ProductsToCustomers" EntitySet="ProductsToCustomers" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ServToSup__idSer__656C112C" Association="WeddingModel.FK__ServToSup__idSer__656C112C">
+            <End Role="Service" EntitySet="Service" />
+            <End Role="ServToSupp" EntitySet="ServToSupp" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ServToSup__idSup__6477ECF3" Association="WeddingModel.FK__ServToSup__idSup__6477ECF3">
+            <End Role="Suppliers" EntitySet="Suppliers" />
+            <End Role="ServToSupp" EntitySet="ServToSupp" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TasksToCu__idTas__6B24EA82" Association="WeddingModel.FK__TasksToCu__idTas__6B24EA82">
+            <End Role="Tasks" EntitySet="Tasks" />
+            <End Role="TasksToCustomer" EntitySet="TasksToCustomer" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Address">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="city" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="number" Type="Int32" />
+          <Property Name="street" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="halls" Relationship="WeddingModel.FK__halls__idAddress__46E78A0C" FromRole="Address" ToRole="halls" />
+          <NavigationProperty Name="Suppliers" Relationship="WeddingModel.FK__Suppliers__idAdd__4D94879B" FromRole="Address" ToRole="Suppliers" />
+        </EntityType>
+        <EntityType Name="Area">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="area1" Type="String" Nullable="false" MaxLength="90" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="halls" Relationship="WeddingModel.FK__halls__idArea__45F365D3" FromRole="Area" ToRole="halls" />
+          <NavigationProperty Name="Suppliers" Relationship="WeddingModel.FK__Suppliers__idAre__4CA06362" FromRole="Area" ToRole="Suppliers" />
+        </EntityType>
+        <EntityType Name="Categories">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Img" Relationship="WeddingModel.FK__Img__idCategory__59063A47" FromRole="Categories" ToRole="Img" />
+          <NavigationProperty Name="ProductsToCustomers" Relationship="WeddingModel.FK__ProductsT__idCat__5629CD9C" FromRole="Categories" ToRole="ProductsToCustomers" />
+          <NavigationProperty Name="Service" Relationship="WeddingModel.FK__Service__idCateg__3E52440B" FromRole="Categories" ToRole="Service" />
+          <NavigationProperty Name="Suppliers" Relationship="WeddingModel.FK__Suppliers__idCat__4BAC3F29" FromRole="Categories" ToRole="Suppliers" />
+        </EntityType>
+        <EntityType Name="ContactUs">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="email" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="phone" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="message" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Customers">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="mail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="phone" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="password" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="src_profile" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Opinion" Relationship="WeddingModel.FK__Opinion__idCusto__5DCAEF64" FromRole="Customers" ToRole="Opinion" />
+          <NavigationProperty Name="ProductsToCustomers" Relationship="WeddingModel.FK__ProductsT__idCus__534D60F1" FromRole="Customers" ToRole="ProductsToCustomers" />
+          <NavigationProperty Name="TasksToCustomer" Relationship="WeddingModel.FK__TasksToCu__idCus__6A30C649" FromRole="Customers" ToRole="TasksToCustomer" />
+        </EntityType>
+        <EntityType Name="halls">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="phone" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="minInvited" Type="Int32" />
+          <Property Name="maxInvited" Type="Int32" />
+          <Property Name="minPrice" Type="Int32" />
+          <Property Name="maxPrice" Type="Int32" />
+          <Property Name="description" Type="String" MaxLength="2500" FixedLength="false" Unicode="true" />
+          <Property Name="src" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="srcLogo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="idtype" Type="Int32" Nullable="false" />
+          <Property Name="idArea" Type="Int32" Nullable="false" />
+          <Property Name="idAddress" Type="Int32" Nullable="false" />
+          <Property Name="idKashrut" Type="Int32" Nullable="false" />
+          <Property Name="idInvited" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Address" Relationship="WeddingModel.FK__halls__idAddress__46E78A0C" FromRole="halls" ToRole="Address" />
+          <NavigationProperty Name="Area" Relationship="WeddingModel.FK__halls__idArea__45F365D3" FromRole="halls" ToRole="Area" />
+          <NavigationProperty Name="Invited" Relationship="WeddingModel.FK__halls__idInvited__48CFD27E" FromRole="halls" ToRole="Invited" />
+          <NavigationProperty Name="Kashrut" Relationship="WeddingModel.FK__halls__idKashrut__47DBAE45" FromRole="halls" ToRole="Kashrut" />
+          <NavigationProperty Name="HallType" Relationship="WeddingModel.FK__halls__idtype__44FF419A" FromRole="halls" ToRole="HallType" />
+          <NavigationProperty Name="Img" Relationship="WeddingModel.FK__Img__idHall__5AEE82B9" FromRole="halls" ToRole="Img" />
+          <NavigationProperty Name="Opinion" Relationship="WeddingModel.FK__Opinion__idHall__5FB337D6" FromRole="halls" ToRole="Opinion" />
+          <NavigationProperty Name="ProductsToCustomers" Relationship="WeddingModel.FK__ProductsT__idHal__5535A963" FromRole="halls" ToRole="ProductsToCustomers" />
+        </EntityType>
+        <EntityType Name="HallType">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="halls" Relationship="WeddingModel.FK__halls__idtype__44FF419A" FromRole="HallType" ToRole="halls" />
+        </EntityType>
+        <EntityType Name="Img">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="src" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="idCategory" Type="Int32" Nullable="false" />
+          <Property Name="idSuppliers" Type="Int32" />
+          <Property Name="idHall" Type="Int32" />
+          <NavigationProperty Name="Categories" Relationship="WeddingModel.FK__Img__idCategory__59063A47" FromRole="Img" ToRole="Categories" />
+          <NavigationProperty Name="halls" Relationship="WeddingModel.FK__Img__idHall__5AEE82B9" FromRole="Img" ToRole="halls" />
+          <NavigationProperty Name="Suppliers" Relationship="WeddingModel.FK__Img__idSuppliers__59FA5E80" FromRole="Img" ToRole="Suppliers" />
+        </EntityType>
+        <EntityType Name="Invited">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="invited1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="halls" Relationship="WeddingModel.FK__halls__idInvited__48CFD27E" FromRole="Invited" ToRole="halls" />
+        </EntityType>
+        <EntityType Name="Kashrut">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="kashrut1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="halls" Relationship="WeddingModel.FK__halls__idKashrut__47DBAE45" FromRole="Kashrut" ToRole="halls" />
+        </EntityType>
+        <EntityType Name="Opinion">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="opinion1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="rating" Type="Int32" />
+          <Property Name="weddindDate" Type="DateTime" Precision="0" />
+          <Property Name="idCustomer" Type="Int32" Nullable="false" />
+          <Property Name="idSuppliers" Type="Int32" />
+          <Property Name="idHall" Type="Int32" />
+          <NavigationProperty Name="Customers" Relationship="WeddingModel.FK__Opinion__idCusto__5DCAEF64" FromRole="Opinion" ToRole="Customers" />
+          <NavigationProperty Name="halls" Relationship="WeddingModel.FK__Opinion__idHall__5FB337D6" FromRole="Opinion" ToRole="halls" />
+          <NavigationProperty Name="Suppliers" Relationship="WeddingModel.FK__Opinion__idSuppl__5EBF139D" FromRole="Opinion" ToRole="Suppliers" />
+        </EntityType>
+        <EntityType Name="ProductsToCustomers">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idCustomer" Type="Int32" Nullable="false" />
+          <Property Name="idSuppliers" Type="Int32" />
+          <Property Name="idHalls" Type="Int32" />
+          <Property Name="idCategory" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Categories" Relationship="WeddingModel.FK__ProductsT__idCat__5629CD9C" FromRole="ProductsToCustomers" ToRole="Categories" />
+          <NavigationProperty Name="Customers" Relationship="WeddingModel.FK__ProductsT__idCus__534D60F1" FromRole="ProductsToCustomers" ToRole="Customers" />
+          <NavigationProperty Name="halls" Relationship="WeddingModel.FK__ProductsT__idHal__5535A963" FromRole="ProductsToCustomers" ToRole="halls" />
+          <NavigationProperty Name="Suppliers" Relationship="WeddingModel.FK__ProductsT__idSup__5441852A" FromRole="ProductsToCustomers" ToRole="Suppliers" />
+        </EntityType>
+        <EntityType Name="Service">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="serv" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="idCategory" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Categories" Relationship="WeddingModel.FK__Service__idCateg__3E52440B" FromRole="Service" ToRole="Categories" />
+          <NavigationProperty Name="ServToSupp" Relationship="WeddingModel.FK__ServToSup__idSer__656C112C" FromRole="Service" ToRole="ServToSupp" />
+        </EntityType>
+        <EntityType Name="ServToSupp">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idSuppliers" Type="Int32" />
+          <Property Name="idServ" Type="Int32" />
+          <NavigationProperty Name="Service" Relationship="WeddingModel.FK__ServToSup__idSer__656C112C" FromRole="ServToSupp" ToRole="Service" />
+          <NavigationProperty Name="Suppliers" Relationship="WeddingModel.FK__ServToSup__idSup__6477ECF3" FromRole="ServToSupp" ToRole="Suppliers" />
+        </EntityType>
+        <EntityType Name="Suppliers">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="phone" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="minPrice" Type="Int32" />
+          <Property Name="maxPrice" Type="Int32" />
+          <Property Name="activity_time" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="description" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+          <Property Name="src" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="srcLogo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="idCategory" Type="Int32" Nullable="false" />
+          <Property Name="idArea" Type="Int32" Nullable="false" />
+          <Property Name="idAddress" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Address" Relationship="WeddingModel.FK__Suppliers__idAdd__4D94879B" FromRole="Suppliers" ToRole="Address" />
+          <NavigationProperty Name="Area" Relationship="WeddingModel.FK__Suppliers__idAre__4CA06362" FromRole="Suppliers" ToRole="Area" />
+          <NavigationProperty Name="Categories" Relationship="WeddingModel.FK__Suppliers__idCat__4BAC3F29" FromRole="Suppliers" ToRole="Categories" />
+          <NavigationProperty Name="Img" Relationship="WeddingModel.FK__Img__idSuppliers__59FA5E80" FromRole="Suppliers" ToRole="Img" />
+          <NavigationProperty Name="Opinion" Relationship="WeddingModel.FK__Opinion__idSuppl__5EBF139D" FromRole="Suppliers" ToRole="Opinion" />
+          <NavigationProperty Name="ProductsToCustomers" Relationship="WeddingModel.FK__ProductsT__idSup__5441852A" FromRole="Suppliers" ToRole="ProductsToCustomers" />
+          <NavigationProperty Name="ServToSupp" Relationship="WeddingModel.FK__ServToSup__idSup__6477ECF3" FromRole="Suppliers" ToRole="ServToSupp" />
+        </EntityType>
+        <EntityType Name="Tasks">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="number" Type="Int32" />
+          <NavigationProperty Name="TasksToCustomer" Relationship="WeddingModel.FK__TasksToCu__idTas__6B24EA82" FromRole="Tasks" ToRole="TasksToCustomer" />
+        </EntityType>
+        <EntityType Name="TasksToCustomer">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idCustomer" Type="Int32" Nullable="false" />
+          <Property Name="idTask" Type="Int32" Nullable="false" />
+          <Property Name="done" Type="Boolean" />
+          <NavigationProperty Name="Customers" Relationship="WeddingModel.FK__TasksToCu__idCus__6A30C649" FromRole="TasksToCustomer" ToRole="Customers" />
+          <NavigationProperty Name="Tasks" Relationship="WeddingModel.FK__TasksToCu__idTas__6B24EA82" FromRole="TasksToCustomer" ToRole="Tasks" />
+        </EntityType>
+        <Association Name="FK__halls__idAddress__46E78A0C">
+          <End Type="WeddingModel.Address" Role="Address" Multiplicity="1" />
+          <End Type="WeddingModel.halls" Role="halls" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Address">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="halls">
+              <PropertyRef Name="idAddress" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Suppliers__idAdd__4D94879B">
+          <End Type="WeddingModel.Address" Role="Address" Multiplicity="1" />
+          <End Type="WeddingModel.Suppliers" Role="Suppliers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Address">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Suppliers">
+              <PropertyRef Name="idAddress" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__halls__idArea__45F365D3">
+          <End Type="WeddingModel.Area" Role="Area" Multiplicity="1" />
+          <End Type="WeddingModel.halls" Role="halls" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Area">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="halls">
+              <PropertyRef Name="idArea" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Suppliers__idAre__4CA06362">
+          <End Type="WeddingModel.Area" Role="Area" Multiplicity="1" />
+          <End Type="WeddingModel.Suppliers" Role="Suppliers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Area">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Suppliers">
+              <PropertyRef Name="idArea" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Img__idCategory__59063A47">
+          <End Type="WeddingModel.Categories" Role="Categories" Multiplicity="1" />
+          <End Type="WeddingModel.Img" Role="Img" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Categories">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Img">
+              <PropertyRef Name="idCategory" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ProductsT__idCat__5629CD9C">
+          <End Type="WeddingModel.Categories" Role="Categories" Multiplicity="1" />
+          <End Type="WeddingModel.ProductsToCustomers" Role="ProductsToCustomers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Categories">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="ProductsToCustomers">
+              <PropertyRef Name="idCategory" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Service__idCateg__3E52440B">
+          <End Type="WeddingModel.Categories" Role="Categories" Multiplicity="1" />
+          <End Type="WeddingModel.Service" Role="Service" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Categories">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Service">
+              <PropertyRef Name="idCategory" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Suppliers__idCat__4BAC3F29">
+          <End Type="WeddingModel.Categories" Role="Categories" Multiplicity="1" />
+          <End Type="WeddingModel.Suppliers" Role="Suppliers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Categories">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Suppliers">
+              <PropertyRef Name="idCategory" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Opinion__idCusto__5DCAEF64">
+          <End Type="WeddingModel.Customers" Role="Customers" Multiplicity="1" />
+          <End Type="WeddingModel.Opinion" Role="Opinion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customers">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Opinion">
+              <PropertyRef Name="idCustomer" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ProductsT__idCus__534D60F1">
+          <End Type="WeddingModel.Customers" Role="Customers" Multiplicity="1" />
+          <End Type="WeddingModel.ProductsToCustomers" Role="ProductsToCustomers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customers">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="ProductsToCustomers">
+              <PropertyRef Name="idCustomer" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TasksToCu__idCus__6A30C649">
+          <End Type="WeddingModel.Customers" Role="Customers" Multiplicity="1" />
+          <End Type="WeddingModel.TasksToCustomer" Role="TasksToCustomer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customers">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="TasksToCustomer">
+              <PropertyRef Name="idCustomer" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__halls__idInvited__48CFD27E">
+          <End Type="WeddingModel.Invited" Role="Invited" Multiplicity="1" />
+          <End Type="WeddingModel.halls" Role="halls" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Invited">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="halls">
+              <PropertyRef Name="idInvited" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__halls__idKashrut__47DBAE45">
+          <End Type="WeddingModel.Kashrut" Role="Kashrut" Multiplicity="1" />
+          <End Type="WeddingModel.halls" Role="halls" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kashrut">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="halls">
+              <PropertyRef Name="idKashrut" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__halls__idtype__44FF419A">
+          <End Type="WeddingModel.HallType" Role="HallType" Multiplicity="1" />
+          <End Type="WeddingModel.halls" Role="halls" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HallType">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="halls">
+              <PropertyRef Name="idtype" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Img__idHall__5AEE82B9">
+          <End Type="WeddingModel.halls" Role="halls" Multiplicity="0..1" />
+          <End Type="WeddingModel.Img" Role="Img" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="halls">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Img">
+              <PropertyRef Name="idHall" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Opinion__idHall__5FB337D6">
+          <End Type="WeddingModel.halls" Role="halls" Multiplicity="0..1" />
+          <End Type="WeddingModel.Opinion" Role="Opinion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="halls">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Opinion">
+              <PropertyRef Name="idHall" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ProductsT__idHal__5535A963">
+          <End Type="WeddingModel.halls" Role="halls" Multiplicity="0..1" />
+          <End Type="WeddingModel.ProductsToCustomers" Role="ProductsToCustomers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="halls">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="ProductsToCustomers">
+              <PropertyRef Name="idHalls" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Img__idSuppliers__59FA5E80">
+          <End Type="WeddingModel.Suppliers" Role="Suppliers" Multiplicity="0..1" />
+          <End Type="WeddingModel.Img" Role="Img" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Suppliers">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Img">
+              <PropertyRef Name="idSuppliers" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Opinion__idSuppl__5EBF139D">
+          <End Type="WeddingModel.Suppliers" Role="Suppliers" Multiplicity="0..1" />
+          <End Type="WeddingModel.Opinion" Role="Opinion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Suppliers">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Opinion">
+              <PropertyRef Name="idSuppliers" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ProductsT__idSup__5441852A">
+          <End Type="WeddingModel.Suppliers" Role="Suppliers" Multiplicity="0..1" />
+          <End Type="WeddingModel.ProductsToCustomers" Role="ProductsToCustomers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Suppliers">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="ProductsToCustomers">
+              <PropertyRef Name="idSuppliers" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ServToSup__idSer__656C112C">
+          <End Type="WeddingModel.Service" Role="Service" Multiplicity="0..1" />
+          <End Type="WeddingModel.ServToSupp" Role="ServToSupp" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Service">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="ServToSupp">
+              <PropertyRef Name="idServ" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ServToSup__idSup__6477ECF3">
+          <End Type="WeddingModel.Suppliers" Role="Suppliers" Multiplicity="0..1" />
+          <End Type="WeddingModel.ServToSupp" Role="ServToSupp" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Suppliers">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="ServToSupp">
+              <PropertyRef Name="idSuppliers" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TasksToCu__idTas__6B24EA82">
+          <End Type="WeddingModel.Tasks" Role="Tasks" Multiplicity="1" />
+          <End Type="WeddingModel.TasksToCustomer" Role="TasksToCustomer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tasks">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="TasksToCustomer">
+              <PropertyRef Name="idTask" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="WeddingModelStoreContainer" CdmEntityContainer="WeddingEntities">
+          <EntitySetMapping Name="Address">
+            <EntityTypeMapping TypeName="WeddingModel.Address">
+              <MappingFragment StoreEntitySet="Address">
+                <ScalarProperty Name="street" ColumnName="street" />
+                <ScalarProperty Name="number" ColumnName="number" />
+                <ScalarProperty Name="city" ColumnName="city" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Area">
+            <EntityTypeMapping TypeName="WeddingModel.Area">
+              <MappingFragment StoreEntitySet="Area">
+                <ScalarProperty Name="area1" ColumnName="area" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Categories">
+            <EntityTypeMapping TypeName="WeddingModel.Categories">
+              <MappingFragment StoreEntitySet="Categories">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ContactUs">
+            <EntityTypeMapping TypeName="WeddingModel.ContactUs">
+              <MappingFragment StoreEntitySet="ContactUs">
+                <ScalarProperty Name="message" ColumnName="message" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Customers">
+            <EntityTypeMapping TypeName="WeddingModel.Customers">
+              <MappingFragment StoreEntitySet="Customers">
+                <ScalarProperty Name="src_profile" ColumnName="src_profile" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="mail" ColumnName="mail" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="halls">
+            <EntityTypeMapping TypeName="WeddingModel.halls">
+              <MappingFragment StoreEntitySet="halls">
+                <ScalarProperty Name="idInvited" ColumnName="idInvited" />
+                <ScalarProperty Name="idKashrut" ColumnName="idKashrut" />
+                <ScalarProperty Name="idAddress" ColumnName="idAddress" />
+                <ScalarProperty Name="idArea" ColumnName="idArea" />
+                <ScalarProperty Name="idtype" ColumnName="idtype" />
+                <ScalarProperty Name="srcLogo" ColumnName="srcLogo" />
+                <ScalarProperty Name="src" ColumnName="src" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="maxPrice" ColumnName="maxPrice" />
+                <ScalarProperty Name="minPrice" ColumnName="minPrice" />
+                <ScalarProperty Name="maxInvited" ColumnName="maxInvited" />
+                <ScalarProperty Name="minInvited" ColumnName="minInvited" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HallType">
+            <EntityTypeMapping TypeName="WeddingModel.HallType">
+              <MappingFragment StoreEntitySet="HallType">
+                <ScalarProperty Name="type" ColumnName="type" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Img">
+            <EntityTypeMapping TypeName="WeddingModel.Img">
+              <MappingFragment StoreEntitySet="Img">
+                <ScalarProperty Name="idHall" ColumnName="idHall" />
+                <ScalarProperty Name="idSuppliers" ColumnName="idSuppliers" />
+                <ScalarProperty Name="idCategory" ColumnName="idCategory" />
+                <ScalarProperty Name="src" ColumnName="src" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Invited">
+            <EntityTypeMapping TypeName="WeddingModel.Invited">
+              <MappingFragment StoreEntitySet="Invited">
+                <ScalarProperty Name="invited1" ColumnName="invited" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Kashrut">
+            <EntityTypeMapping TypeName="WeddingModel.Kashrut">
+              <MappingFragment StoreEntitySet="Kashrut">
+                <ScalarProperty Name="kashrut1" ColumnName="kashrut" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Opinion">
+            <EntityTypeMapping TypeName="WeddingModel.Opinion">
+              <MappingFragment StoreEntitySet="Opinion">
+                <ScalarProperty Name="idHall" ColumnName="idHall" />
+                <ScalarProperty Name="idSuppliers" ColumnName="idSuppliers" />
+                <ScalarProperty Name="idCustomer" ColumnName="idCustomer" />
+                <ScalarProperty Name="weddindDate" ColumnName="weddindDate" />
+                <ScalarProperty Name="rating" ColumnName="rating" />
+                <ScalarProperty Name="opinion1" ColumnName="opinion" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProductsToCustomers">
+            <EntityTypeMapping TypeName="WeddingModel.ProductsToCustomers">
+              <MappingFragment StoreEntitySet="ProductsToCustomers">
+                <ScalarProperty Name="idCategory" ColumnName="idCategory" />
+                <ScalarProperty Name="idHalls" ColumnName="idHalls" />
+                <ScalarProperty Name="idSuppliers" ColumnName="idSuppliers" />
+                <ScalarProperty Name="idCustomer" ColumnName="idCustomer" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Service">
+            <EntityTypeMapping TypeName="WeddingModel.Service">
+              <MappingFragment StoreEntitySet="Service">
+                <ScalarProperty Name="idCategory" ColumnName="idCategory" />
+                <ScalarProperty Name="serv" ColumnName="serv" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ServToSupp">
+            <EntityTypeMapping TypeName="WeddingModel.ServToSupp">
+              <MappingFragment StoreEntitySet="ServToSupp">
+                <ScalarProperty Name="idServ" ColumnName="idServ" />
+                <ScalarProperty Name="idSuppliers" ColumnName="idSuppliers" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Suppliers">
+            <EntityTypeMapping TypeName="WeddingModel.Suppliers">
+              <MappingFragment StoreEntitySet="Suppliers">
+                <ScalarProperty Name="idAddress" ColumnName="idAddress" />
+                <ScalarProperty Name="idArea" ColumnName="idArea" />
+                <ScalarProperty Name="idCategory" ColumnName="idCategory" />
+                <ScalarProperty Name="srcLogo" ColumnName="srcLogo" />
+                <ScalarProperty Name="src" ColumnName="src" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="activity_time" ColumnName="activity_time" />
+                <ScalarProperty Name="maxPrice" ColumnName="maxPrice" />
+                <ScalarProperty Name="minPrice" ColumnName="minPrice" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tasks">
+            <EntityTypeMapping TypeName="WeddingModel.Tasks">
+              <MappingFragment StoreEntitySet="Tasks">
+                <ScalarProperty Name="number" ColumnName="number" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TasksToCustomer">
+            <EntityTypeMapping TypeName="WeddingModel.TasksToCustomer">
+              <MappingFragment StoreEntitySet="TasksToCustomer">
+                <ScalarProperty Name="done" ColumnName="done" />
+                <ScalarProperty Name="idTask" ColumnName="idTask" />
+                <ScalarProperty Name="idCustomer" ColumnName="idCustomer" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

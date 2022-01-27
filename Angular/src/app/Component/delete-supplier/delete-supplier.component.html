@@ -1,0 +1,42 @@
+<h1>רשימת ספקים</h1>
+
+
+<div class="search">
+    <input type="text" placeholder="חיפוש ספק" [(ngModel)]="text" (keyup)="search()">
+    <button class="search-botton" (click)="search()">
+        <mat-icon class="material-icons white">search</mat-icon>
+    </button>
+</div>
+<div>
+    <mat-card *ngFor="let item of show_hall">
+     <!-- <div style="height: 42vh; margin-top:27%;"> -->
+            <img src={{item.src}} class="img_hall">
+            <mat-card-header>
+                <mat-card-title>{{item.name}}</mat-card-title>
+                <button (click)="openDialog(item.id,1)">
+                    <mat-icon class="material-icons">delete_outline</mat-icon>
+                </button>
+                <button (click)="openUpdateDialog(item.id,1)">
+                    <mat-icon class="material-icons">update</mat-icon>
+                </button>
+                
+            </mat-card-header>
+        <!-- </div> -->
+    </mat-card>
+    <!-- </div>
+<div> -->
+    <mat-card *ngFor="let item of show_supplier">
+        <img src={{item.src}}>
+        <mat-card-header>
+            <mat-card-title>{{item.name}}</mat-card-title>
+            <button (click)="openDialog(item.id,item.idCategory)">
+                <mat-icon class="material-icons">delete_outline</mat-icon>
+            </button>
+            <button (click)="openUpdateDialog(item.id,item.idCategory)">
+                <mat-icon class="material-icons">update</mat-icon>
+            </button>
+        </mat-card-header>
+    </mat-card>
+</div>
+
+<p *ngIf="show_supplier.length==0 && show_hall.length==0">אין תוצאות עבור חיפוש זה</p>

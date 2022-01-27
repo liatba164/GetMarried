@@ -1,0 +1,40 @@
+<div id="main">
+
+    <div class="div">
+        <!-- הכנס מידע לצד לימין -->
+        <h2>מפת האתר</h2>
+        <button (click)="onClkLink('Halls')">אולמות אירועים </button><br />
+        <button (click)="onClkLink('Suppliers/2')"> שמלות כלה</button><br />
+        <button (click)="onClkLink('Suppliers/3')">איפור כלות </button><br />
+        <button (click)="onClkLink('Suppliers/4')">עיצוב שיער</button><br />
+        <button (click)="onClkLink('Suppliers/5')">חליפות חתן</button><br />
+        <button (click)="onClkLink('Suppliers/6')"> צילום אירועים </button><br />
+        <button (click)="onClkLink('Suppliers/7')"> דיג'יי </button>
+
+    </div>
+
+    <div class="div">
+        <h2>בלוגים </h2>
+        <button routerLink="TipsForBride" >טיפים לכלה </button><br />
+        <button routerLink="WeddingDressChoice" >איך בוחרים שמלת כלה? </button><br />
+
+        <button routerLink="SuitChoice">המדריך המלא לחליפת חתן </button><br />
+        <button routerLink="QA">שאלות ותשובות </button>
+    </div>
+
+    <div class="div">
+        <h2>צרו איתנו קשר</h2>
+
+        <button routerLink="ContactUs">צרו קשר</button><br />
+        <button routerLink="About-Us">מי אנחנו</button><br />
+        <div>
+            <mat-icon class="material-icons">phone</mat-icon> <span>03-9032994</span>
+        </div>
+        <div>
+            <mat-icon class="material-icons">mail</mat-icon> <span>GetMarriedService@gmail.com</span>
+        </div>
+    </div>
+    
+    
+</div>
+<p class="Copyright"> Get Married &copy; </p>

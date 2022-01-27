@@ -1,0 +1,92 @@
+.reviews{
+    /* box-shadow: 0px 2px 16px rgb(155, 154, 154); */
+        
+        padding: 17px 15px 34px;
+        
+    }
+    h1{
+        margin:2%;
+          font-size: 35px;
+         
+    }
+    .right{
+        float:right
+    }
+    img{
+        border-radius: 50%;
+        width: 119px;
+        height: 114px;
+    }
+    
+    .img-cluster{
+        /* width: 50%; */
+        /* float: right; */
+        padding: 3px;
+    }
+    
+    .details-cluster{
+        text-align: center;
+       padding: 0 15px 10px;
+       margin-top: 22px;
+       /* float: right; */
+    }
+    .mat-card{
+        width: 90%;
+        margin: 15px auto;
+        overflow: auto;
+        border: 2px  solid rgb(192 132 102);
+        box-shadow: none;
+    }
+    
+    .details {
+        width:26%;
+    }
+    
+    
+    .opinino{
+        border-right: 1px solid rgba(71, 66, 66, 0.21);
+        float:left;
+        width:70%; 
+        padding: 0 10px;
+        height: auto;
+        padding: 0 24px 0 0;
+        min-height: 100px;
+    }
+    
+    .add_opinion{
+        text-align: center;
+        font-size: 20px;
+        margin-top: 2%;
+    }
+    
+    
+    .material-icons {
+        display: block;
+        color:#9e5430;
+        margin: 10px;
+        font-size: 46px;
+    }
+    .icon{
+        float: right;
+        display: inline;
+        font-size: 26px;
+        margin: 1px;
+        padding: 2px;
+    }
+    
+    .block{
+        display:block;
+        margin: 7px;
+    }
+
+    p{
+        font-size: 17px;
+    }
+
+    button{
+        display: block;
+    margin:1% auto;
+    border: none;
+    font-size: 15px;
+    background-color:#fafafa;
+    }

@@ -1,0 +1,295 @@
+<h1> מעודפים שלי</h1>
+<mat-accordion>
+
+    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                אולמות אירועים       
+
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+
+        <div>
+            <mat-card *ngFor="let item of HallsList" >
+
+                <div class="details right" routerLink="/Hall-Details/{{item.id}}">
+                    <div class="img-cluster right">
+                        <img src="{{item.src}}">
+                      
+                    </div>
+                </div>
+                
+                    <div class="details-cluster right" routerLink="/Hall-Details/{{item.id}}">
+                        <h2>{{item.name}}</h2>  
+                        <div>
+                            <mat-icon class="material-icons">location_on</mat-icon>
+                            <span> {{getCity(item.idAddress)}}</span>
+                        </div>
+                        <div>
+                            <mat-icon class="material-icons">phone</mat-icon>
+                            <span> {{item.phone}}</span>
+                        </div>
+
+                    </div>
+                    <button (click)="openDialog(item.id,1)">
+                        <mat-icon class="material-icons">delete_outline</mat-icon>
+                    </button>
+                
+
+            </mat-card>
+        </div>
+    </mat-expansion-panel>
+
+
+    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                שמלות כלה
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div *ngFor="let item of SuppliersList">
+            <mat-card *ngIf="item.idCategory==2" >
+
+                <div class="details right" routerLink="/Supplier-Details/{{item.id}}">
+                    <div class="img-cluster right">
+                        <img src="{{item.src}}">
+                    </div>
+                </div>
+
+               
+                    <div class="details-cluster right" routerLink="/Supplier-Details/{{item.id}}">
+                        <!--שולמית לוי  -->
+                        <h2>{{item.name}}</h2>
+                        <div>
+                            <mat-icon class="material-icons">location_on</mat-icon>
+                            <span> {{getCity(item.idAddress)}}</span>
+                        </div>
+                        <div>
+                            <mat-icon class="material-icons">phone</mat-icon>
+                            <span> {{item.phone}}</span>
+                        </div>
+
+                    </div>
+                    <button (click)="openDialog(item.id,item.idCategory)">
+                        <mat-icon class="material-icons">delete_outline</mat-icon>
+                    </button>
+               
+
+            </mat-card>
+        </div>
+    </mat-expansion-panel>
+
+
+
+
+    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                איפור כלות
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div *ngFor="let item of SuppliersList">
+            <mat-card *ngIf="item.idCategory==3" >
+
+                <div class="details right" routerLink="/Supplier-Details/{{item.id}}">
+                    <div class="img-cluster right">
+                        <img src="{{item.src}}">
+                    </div>
+                </div>
+
+               
+                    <div class="details-cluster right" routerLink="/Supplier-Details/{{item.id}}">
+                        <!--שולמית לוי  -->
+                        <h2>{{item.name}}</h2>
+                        <div>
+                            <mat-icon class="material-icons">location_on</mat-icon>
+                            <span> {{getCity(item.idAddress)}}</span>
+                        </div>
+                        <div>
+                            <mat-icon class="material-icons">phone</mat-icon>
+                            <span> {{item.phone}}</span>
+                        </div>
+
+                    </div>
+                    <button (click)="openDialog(item.id,item.idCategory)">
+                        <mat-icon class="material-icons">delete_outline</mat-icon>
+                    </button>
+
+               
+            </mat-card>
+        </div>
+    </mat-expansion-panel>
+
+
+
+
+    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                עיצוב שיער
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div *ngFor="let item of SuppliersList">
+
+
+            <mat-card *ngIf="item.idCategory==4" routerLink="/Supplier-Details/{{item.id}}">
+
+                <div class="details right" >
+                    <div class="img-cluster right">
+                        <img src="{{item.src}}">
+                    </div>
+                </div>
+
+                
+                    <div class="details-cluster right" routerLink="/Supplier-Details/{{item.id}}">
+                        <!--שולמית לוי  -->
+                        <h2>{{item.name}}</h2>
+                        <div>
+                            <mat-icon class="material-icons">location_on</mat-icon>
+                            <span> {{getCity(item.idAddress)}}</span>
+                        </div>
+                        <div>
+                            <mat-icon class="material-icons">phone</mat-icon>
+                            <span> {{item.phone}}</span>
+                        </div>
+
+                    </div>
+                    <button (click)="openDialog(item.id,item.idCategory)">
+                        <mat-icon class="material-icons">delete_outline</mat-icon>
+                    </button>
+
+           
+
+            </mat-card>
+        </div>
+    </mat-expansion-panel>
+
+
+
+
+    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                חליפות חתן
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div *ngFor="let item of SuppliersList">
+            <mat-card *ngIf="item.idCategory==5" >
+
+                <div class="details right" routerLink="/Supplier-Details/{{item.id}}">
+                    <div class="img-cluster right">
+                        <img src="{{item.src}}">
+                    </div>
+                </div>
+
+               
+                    <div class="details-cluster right" routerLink="/Supplier-Details/{{item.id}}">
+                        <!--שולמית לוי  -->
+                        <h2>{{item.name}}</h2>
+                        <div>
+                            <mat-icon class="material-icons">location_on</mat-icon>
+                            <span> {{getCity(item.idAddress)}}</span>
+                        </div>
+                        <div>
+                            <mat-icon class="material-icons">phone</mat-icon>
+                            <span> {{item.phone}}</span>
+                        </div>
+
+                    </div>
+                    <button (click)="openDialog(item.id,item.idCategory)">
+                        <mat-icon class="material-icons">delete_outline</mat-icon>
+                    </button>
+
+              
+
+            </mat-card>
+        </div>
+    </mat-expansion-panel>
+
+
+
+
+    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                צילום אירועים
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div *ngFor="let item of SuppliersList">
+            <mat-card *ngIf="item.idCategory==6" >
+
+                <div class="details right" routerLink="/Supplier-Details/{{item.id}}">
+                    <div class="img-cluster right">
+                        <img src="{{item.src}}">
+                    </div>
+                </div>
+
+                
+                    <div class="details-cluster right" routerLink="/Supplier-Details/{{item.id}}">
+                        <!--שולמית לוי  -->
+                        <h2>{{item.name}}</h2>
+                        <div>
+                            <mat-icon class="material-icons">location_on</mat-icon>
+                            <span> {{getCity(item.idAddress)}}</span>
+                        </div>
+                        <div>
+                            <mat-icon class="material-icons">phone</mat-icon>
+                            <span> {{item.phone}}</span>
+                        </div>
+
+                    </div>
+                    <button (click)="openDialog(item.id,item.idCategory)">
+                        <mat-icon class="material-icons" >delete_outline</mat-icon>
+                    </button>
+
+            </mat-card>
+        </div>
+    </mat-expansion-panel>
+
+
+
+
+    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                די-ג'י
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div *ngFor="let item of SuppliersList">
+            <mat-card *ngIf="item.idCategory==7" >
+
+                <div class="details right" routerLink="/Supplier-Details/{{item.id}}">
+                    <div class="img-cluster right">
+                        <img src="{{item.src}}">
+                    </div>
+                </div>
+
+                
+                    <div class="details-cluster right" routerLink="/Supplier-Details/{{item.id}}">
+                        <!--שולמית לוי  -->
+                        <h2>{{item.name}}</h2>
+                        <div>
+                            <mat-icon class="material-icons">location_on</mat-icon>
+                            <span> {{getCity(item.idAddress)}}</span>
+                        </div>
+                        <div>
+                            <mat-icon class="material-icons">phone</mat-icon>
+                            <span> {{item.phone}}</span>
+                        </div>
+
+                    </div>
+                    <button (click)="openDialog(item.id,item.idCategory)">
+                        <mat-icon class="material-icons" >delete_outline</mat-icon>
+                    </button>
+
+               
+
+            </mat-card>
+        </div>
+    </mat-expansion-panel>
+
+
+
+</mat-accordion>

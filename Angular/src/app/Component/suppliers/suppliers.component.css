@@ -1,0 +1,104 @@
+
+.mat-card-title ,h3{ 
+  
+  color: #9e5430;
+ text-align: center;
+}
+h1{
+  margin: 3% 0;
+font-size: 35px;
+}
+
+button{
+  border-radius: 64%;
+  position: absolute;
+  padding: 4px 6px;
+  border: none;
+  background-color: rgb(255 255 255);
+}
+
+.mat-card{
+  position: unset;
+  padding: 7px;
+  margin: 1% 3.5% 1% 1%;
+  width: 21vw;
+  height: 85vh;
+  display: inline-block;
+}
+
+
+.contain{
+  width: 80vw;
+  float: left;
+}
+
+
+.material-icons{
+  color:#9e5430 ;
+}
+
+.filter-btn{
+  width: 14%;
+  border-radius: 25px;
+  background-color: white;
+  border: 2px rgb(255 255 255) solid;
+
+}
+.btn_search_suppliers{
+  border-radius: 18px;
+  text-align: center;
+  margin-right: 28%;
+  background-color: rgb(192 132 102 / 92%);
+  width: 9vw;
+  position: initial;
+}
+
+.mat-card-title{
+  border-left: #8f8d8d 1px solid;
+  padding-left: 11px;
+}
+
+img{
+  height: 55%;
+  width: 94%;
+  padding: 8px;
+  margin: 2px;
+}
+
+
+.description{
+  height: 16vh;
+  margin: 20px;
+  padding: 5px;
+}
+p{
+  text-align: center;
+}
+
+.mat-slider {
+      margin: -4% 8%;
+      width: 16vw;
+      padding: 0%;
+}
+
+.left{
+    float:left;
+}
+
+
+app-filter-suppliers
+{
+  right: 0;
+  display: inline-block;
+  width: 17vw;
+  padding: 0% 1% 0 0px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  margin-top: 7%;
+  }
+
+
+  .error{
+    font-size: 20px;
+    width: auto;
+  } 

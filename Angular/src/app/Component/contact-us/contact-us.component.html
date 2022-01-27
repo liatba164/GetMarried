@@ -1,0 +1,60 @@
+<h1>צרו קשר</h1>
+<img src="assets/Image/Home/contact.jpg">
+<div class="contain">
+
+   בעל עסק, אם ההרגשה היא ש…
+   <ul>
+      <li>העסק שלך לא מתרומם כמו הציפיות שלך אף שיש בו פוטנציאל עצום להצלחה!</li>
+      <li>אתה רוצה להגיע ללקוחות חדשים, ולא רק ללקוחות שמגיעים מ'פה לאוזן', כדי להגדיל את ההכנסות ולא להיתקע ב"תקרת
+         הזכוכית". </li>
+   </ul>
+   בהצטרפות לאתר " Get Married" תרוויח:
+   <ul>
+      <li>שהעסק שלך יפרח, ותקבל זרימת לקוחות קבועה כך שהטלפון שלך לא יפסיק לצלצל. </li>
+      <li>תגיע לקהל היעד המדויק עבורך, וללקוחות שמחפשים אותך ורוצים את השירות דווקא שלך! </li>
+   </ul>
+
+
+
+   אז, תשאיר פרטים
+
+   כדי להצטרף אלינו ולהתחיל להגדיל את קהל הלקוחות שלך, אנחנו ניצור אתך קשר בהקדם.
+
+</div>
+
+
+<div>
+   <form [formGroup]="Send_Review" (ngSubmit)="Submit()">
+      <div class="right div_form">
+         <mat-form-field>
+            <input matInput formControlName="name" type="text" placeholder="שם">
+            <mat-error>
+               {{getNameError()}}
+            </mat-error>
+         </mat-form-field>
+
+         <mat-form-field>
+            <input matInput formControlName="phone" type="phone" placeholder="פלאפון">
+            <mat-error>
+               {{getErrorPhone()}}
+            </mat-error>
+         </mat-form-field>
+
+         <mat-form-field>
+            <input matInput formControlName="email" type="email" placeholder="מייל">
+            <mat-error>
+               {{getErrorEmail()}}
+            </mat-error>
+         </mat-form-field>
+
+      </div>
+
+      <div class="left div_form">
+         <textarea formControlName="message" #message maxlength="200" matInput
+            placeholder="מה תרצו לספר לנו?"></textarea>
+         <mat-hint class="left">{{message.value.length}} / 200</mat-hint>
+         <button mat-flat-button type="submit">שליחה</button>
+      </div>
+
+   </form>
+</div>

@@ -1,0 +1,30 @@
+<div class="warrper">
+    <app-filter (passArray)="ShowHallList($event)"> </app-filter>
+    <div class="contain">
+        <h1>אולמות אירועים</h1>
+
+        <mat-card *ngFor="let item of hallsList">
+
+            <button (click)="toggleSelected(item.id)" *ngIf="cust!=null">
+                <mat-icon *ngIf="selected[item.id]" class="material-icons"> favorite </mat-icon>
+                <mat-icon *ngIf="!selected[item.id]" class="material-icons"> favorite_border </mat-icon>
+            </button>
+
+            <img src={{item.src}}>
+            <hr>
+            <mat-card-header>
+                <mat-card-title>{{item.name}}</mat-card-title>
+                <span>{{GetAddressById(item.idAddress)}}</span>
+            </mat-card-header>
+
+            <mat-card-content>
+                <p>{{sliceDescription(item.description)}}</p>
+            </mat-card-content>
+
+            <button mat-raised-button class="btn_search_hall" (click)="GetHallById(item.id)">לפרטים נוספים</button>
+        </mat-card>
+
+        <p class="error" *ngIf="hallsList.length==0 && search==1">אין תוצאות עבור חיפוש זה</p>
+    </div>
+
+</div>

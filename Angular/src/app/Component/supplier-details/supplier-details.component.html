@@ -1,0 +1,81 @@
+<div>
+    <img class="home_img" *ngIf="supp.idCategory==2" src="assets/Image/Home/dressHome.jpg">
+    <img class="home_img" *ngIf="supp.idCategory==3" src="assets/Image/Home/makeupHome.jpg">
+    <img class="home_img" *ngIf="supp.idCategory==4" src="assets/Image/Home/hairHome.jpg">
+    <img class="home_img" *ngIf="supp.idCategory==5" src="assets/Image/Home/suitHome.jpg">
+    <img class="home_img" *ngIf="supp.idCategory==6" src="assets/Image/Home/photoHome.jpg">
+    <img class="home_img" *ngIf="supp.idCategory==7" src="assets/Image/Home/djHome.png">
+    <button (click)="toggleSelected(supp.id)" *ngIf="cust!=null">
+        <mat-icon *ngIf="selected" class="material-icons"> favorite </mat-icon>
+        <mat-icon *ngIf="!selected" class="material-icons"> favorite_border </mat-icon>
+    </button>
+</div>
+<div style="width: 90vw; margin:auto ;">
+
+    <div class="filter-container">
+        <div class="main-info-box ">
+            <h2>{{supp.name}}</h2>
+
+            <img class="logo" src="{{supp.srcLogo}}">
+
+        </div>
+
+        <div class="filter-box">
+            <mat-icon class="material-icons"> attach_money</mat-icon>
+            <p class="mini-titel"><u>מחיר</u> </p>
+            <p> {{supp.maxPrice}} - {{supp.minPrice}}</p>
+        </div>
+
+        <div class="filter-box" *ngIf='supp.activity_time!="" && supp.activity_time!=null'>
+            <mat-icon class="material-icons">date_range</mat-icon>
+
+            <p><u> שעות פעילות</u> </p>
+            <p> {{supp.activity_time}}</p>
+        </div>
+        <div class="filter-box" *ngIf="srvList.length!=0">
+            <mat-icon class="material-icons">local_offer</mat-icon>
+            <p><u>שירות</u> </p>
+            <p *ngFor="let item of srvList"> {{item.serv}}</p>
+        </div>
+        <div class="filter-box">
+            <mat-icon class="material-icons"> location_on</mat-icon>
+            <p><u>אזור</u></p>
+            <p> {{area.area1}}</p>
+        </div>
+    </div>
+
+    <div class="description">
+        <div class="right-side">
+
+            <h1 *ngIf="supp.idCategory==2">{{supp.name}} - שמלות כלה</h1>
+            <h1 *ngIf="supp.idCategory==3">{{supp.name}} - איפור כלות</h1>
+            <h1 *ngIf="supp.idCategory==4">{{supp.name}} - עיצוב שיער</h1>
+            <h1 *ngIf="supp.idCategory==5">{{supp.name}} - חליפות חתן</h1>
+            <h1 *ngIf="supp.idCategory==6">{{supp.name}} - צילום אירועים</h1>
+            <h1 *ngIf="supp.idCategory==7">{{supp.name}} - די-ג'י</h1>
+            <p> {{supp.description}}</p>
+        </div>
+        <div class="left-side">
+
+            <div class="address-phone">
+                <mat-icon class="material-icons icon">phone</mat-icon>
+                <!-- טלפון: -->
+                {{supp.phone}}
+            </div>
+
+            <div class="address-phone">
+                <mat-icon class="material-icons icon">location_on</mat-icon>
+                <!-- :כתובת -->
+                {{address.street}} {{address.number}}, {{address.city}}
+            </div>
+        </div>
+    </div>
+
+
+    <div class="gallery">
+        <span *ngFor="let item of img">
+            <img class="img_gallery" src={{item.src}}>
+        </span>
+    </div>
+    <app-opinion [suppliers]="supp"></app-opinion>
+</div>

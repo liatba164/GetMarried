@@ -1,0 +1,57 @@
+<form [formGroup]="profile" (ngSubmit)="updateCustomer()">
+    <h1>עדכון פרופיל</h1>
+    <div>
+        <div style="margin:5% auto ; width: 30%;">
+            <img src="{{url}}" >
+            <!-- <img src="{{custnew.src_profile}}" *ngIf="custnew.src_profile!=null"> -->
+        </div>
+        
+        <div class="change_Profile_img">
+            <span>שנה תמונת פרופיל:</span>
+            <input type="file" name="בחר תמונה"  accept="Image/*" (change)="onSelectFile($event)" />
+        </div>
+
+
+        <div>
+            <mat-form-field appearance="fill">
+                <mat-label>שם</mat-label>
+                <input matInput formControlName="name" >
+                <mat-error>{{getErrorName()}}</mat-error>
+            </mat-form-field>
+        </div>
+
+        <div>
+            <mat-form-field appearance="fill">
+                <mat-label>פלאפון</mat-label>
+                <input type="tel" matInput formControlName="phone" >
+                <mat-icon class="material-icons" matSuffix>phone</mat-icon>
+                <mat-error>{{getErrorPhone()}}</mat-error>
+            </mat-form-field>
+        </div>
+
+        <div>
+            <mat-form-field appearance="fill">
+                <mat-label>דואר אלקטרוני</mat-label>
+                <input matInput formControlName="email" >
+                <mat-icon class="material-icons" matSuffix>mail</mat-icon>
+                <mat-error> {{getErrorEmail()}} </mat-error>
+            </mat-form-field>
+        </div>
+
+    </div>
+
+    <div>
+        <mat-form-field appearance="fill">
+            <mat-label>סיסמא</mat-label>
+            <input matInput [type]="hideSign ? 'password' : 'text'" formControlName="password"  >
+            <button mat-icon-button matSuffix type="button" (click)="hideSign = !hideSign"
+                [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hideSign">
+                <mat-icon class="material-icons"> {{hideSign ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+            <mat-error>{{getErrorPassword()}}</mat-error>
+        </mat-form-field>
+    </div>
+
+ 
+    <button mat-flat-button mat-button type="submit">שמור שינויים</button>
+</form>

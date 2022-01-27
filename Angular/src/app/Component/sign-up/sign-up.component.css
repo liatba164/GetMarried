@@ -1,0 +1,74 @@
+form{
+  /* background-image: url(/assets/Image/ff.jpg); */
+  /* background-repeat:no-repeat; */
+  background-position: center;
+  width: 25vw;
+  height: 90vh;
+  margin: 9% auto 1%;
+  background-color: white;
+  border:1px solid #dbdbdb;
+  padding: 3px;
+}
+
+h1{
+    margin: 3% 0 9% ;
+  font-size: 35px;
+  }
+
+
+
+.mat-icon-button{
+  background-color: rgba(0, 0, 0, 0);
+  font-family: 'Material Icons';
+  color:rgb(0, 0, 0);
+ margin: 0px 0px  0px -6px;
+  border: none; 
+}
+
+
+button{
+  /* margin-right: 39%;
+  width: 21%;
+  font-size: 19px;
+  height: 40px;
+  border: 2px #000000 solid; */
+
+  border-radius: 18px;
+  text-align: center;
+  margin: 23px auto ;
+  display: block;
+  background-color: rgb(192 132 102 / 92%);
+  width: 8vw;
+
+}
+
+.mat-form-field{  
+  font-weight: bold;
+  width: 20vw;
+  padding: 7px;
+  text-align: right;
+  margin: 0% 6%;
+}
+
+p{
+  margin: 14px;
+  text-align: center;
+
+}
+
+.log_in{
+  background-position: center;
+  width: 25vw;
+  margin: 0% auto 10%;
+  background-color: white;
+  border:1px solid #dbdbdb;
+}
+
+
+.message{
+margin: 0px 23px 35px 0px;
+padding:9px;
+}
+
+
+ 

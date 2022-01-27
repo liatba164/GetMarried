@@ -1,0 +1,122 @@
+<mat-dialog-content>
+    <button type="button" class="close" mat-dialog-close>
+        <mat-icon class="material-icons icon">close</mat-icon>
+    </button>
+
+    <h1>עדכון ספק</h1>
+    <form [formGroup]="updateHall" (ngSubmit)="update()">
+
+        <mat-form-field appearance="fill">
+            <mat-label>שם העסק</mat-label>
+            <input matInput formControlName="name" >
+            <mat-error>{{getErrorName()}}</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>פלאפון</mat-label>
+            <input type="tel" matInput formControlName="phone" >
+            <mat-icon class="material-icons" matSuffix>phone</mat-icon>
+            <mat-error>{{getErrorPhone()}}</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>בחר אזור</mat-label>
+            <mat-select name="area" formControlName="area" >
+                <mat-option *ngFor="let area of AreaList" [value]="area.area1">
+                    {{area.area1}}
+                </mat-option>
+            </mat-select>
+            <mat-error>{{getErrorArea()}}</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>עיר</mat-label> 
+            <input matInput formControlName="city">
+            <mat-error>{{getErrorCity()}}</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>רחוב</mat-label>
+            <input matInput formControlName="street"  >
+            <mat-error>{{getErrorStreet()}}</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>מספר</mat-label>
+            <input matInput type="number" formControlName="number" >
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="description">
+            <mat-label>תיאור על הספק</mat-label>
+            <textarea matInput formControlName="description" ></textarea>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>בחר כשרות</mat-label>
+            <mat-select name="kashrut" formControlName="kashrut" >
+                <mat-option *ngFor="let kashrut of kashrutList" [value]="kashrut.kashrut1">
+                    {{kashrut.kashrut1}}
+                </mat-option>
+            </mat-select>
+            <mat-error>{{getErrorKashrut()}}</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>סוג אולם</mat-label>
+            <mat-select name="hallType" formControlName="hallType" >
+                <mat-option *ngFor="let hallType of hallTypeList" [value]="hallType.type">
+                    {{hallType.type}}
+                </mat-option>
+            </mat-select>
+            <mat-error>{{getErrorHallType()}}</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label> מחיר מנה (מינימום)</mat-label>
+            <input matInput type="number" formControlName="minPrice" >
+            <mat-error>{{getErrorMinPrice()}}</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label> מחיר מנה (מקסימום)</mat-label>
+            <input matInput type="number" formControlName="maxPrice" >
+            <mat-error>{{getErrorMaxPrice()}}</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label> מספר מוזמנים (מינימום)</mat-label>
+            <input matInput type="number" formControlName="minInvited">
+            <mat-error>{{getErrorMinInvited()}}</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label> מספר מוזמנים (מקסימום)</mat-label>
+            <input matInput type="number" formControlName="maxInvited" >
+            <mat-error>{{getErrorMaxInvited()}}</mat-error>
+        </mat-form-field>
+
+        <div class="add_img">
+            <span>הוסף תמונה ראשית</span> <br />
+            <input type="file" name="בחר תמונה" accept="Image/*" (change)="onSelectImg($event,1)" />
+        </div>
+        <img *ngIf="hall.src!=''" src="{{hall.src}}">
+
+        <div class="add_img">
+            <span>הוסף לוגו</span><br />
+            <input type="file" value="בחר תמונה" accept="Image/*" (change)="onSelectImg($event,2)" />
+        </div>
+        <img *ngIf="hall.srcLogo!=''" src="{{hall.srcLogo}}">
+
+
+        <div class="add_img">
+            <span>הוסף גלריית תמונות</span><br />
+            <input type="file" name="בחר תמונה" accept="Image/*" (change)="onSelectFile($event)" multiple />
+        </div>
+        <div *ngFor="let item of ImgList" class="img_gallery">
+            <img src="{{item.src}}">
+        </div>
+
+        <button type="submit">עדכן</button>
+    </form>
+
+</mat-dialog-content>

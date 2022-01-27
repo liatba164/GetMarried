@@ -1,0 +1,189 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="WeddingModelStoreContainer" CdmEntityContainer="WeddingEntities">
+    <EntitySetMapping Name="Address">
+      <EntityTypeMapping TypeName="WeddingModel.Address">
+        <MappingFragment StoreEntitySet="Address">
+          <ScalarProperty Name="street" ColumnName="street" />
+          <ScalarProperty Name="number" ColumnName="number" />
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Area">
+      <EntityTypeMapping TypeName="WeddingModel.Area">
+        <MappingFragment StoreEntitySet="Area">
+          <ScalarProperty Name="area1" ColumnName="area" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Categories">
+      <EntityTypeMapping TypeName="WeddingModel.Categories">
+        <MappingFragment StoreEntitySet="Categories">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ContactUs">
+      <EntityTypeMapping TypeName="WeddingModel.ContactUs">
+        <MappingFragment StoreEntitySet="ContactUs">
+          <ScalarProperty Name="message" ColumnName="message" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Customers">
+      <EntityTypeMapping TypeName="WeddingModel.Customers">
+        <MappingFragment StoreEntitySet="Customers">
+          <ScalarProperty Name="src_profile" ColumnName="src_profile" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="mail" ColumnName="mail" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="halls">
+      <EntityTypeMapping TypeName="WeddingModel.halls">
+        <MappingFragment StoreEntitySet="halls">
+          <ScalarProperty Name="idInvited" ColumnName="idInvited" />
+          <ScalarProperty Name="idKashrut" ColumnName="idKashrut" />
+          <ScalarProperty Name="idAddress" ColumnName="idAddress" />
+          <ScalarProperty Name="idArea" ColumnName="idArea" />
+          <ScalarProperty Name="idtype" ColumnName="idtype" />
+          <ScalarProperty Name="srcLogo" ColumnName="srcLogo" />
+          <ScalarProperty Name="src" ColumnName="src" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="maxPrice" ColumnName="maxPrice" />
+          <ScalarProperty Name="minPrice" ColumnName="minPrice" />
+          <ScalarProperty Name="maxInvited" ColumnName="maxInvited" />
+          <ScalarProperty Name="minInvited" ColumnName="minInvited" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HallType">
+      <EntityTypeMapping TypeName="WeddingModel.HallType">
+        <MappingFragment StoreEntitySet="HallType">
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Img">
+      <EntityTypeMapping TypeName="WeddingModel.Img">
+        <MappingFragment StoreEntitySet="Img">
+          <ScalarProperty Name="idHall" ColumnName="idHall" />
+          <ScalarProperty Name="idSuppliers" ColumnName="idSuppliers" />
+          <ScalarProperty Name="idCategory" ColumnName="idCategory" />
+          <ScalarProperty Name="src" ColumnName="src" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Invited">
+      <EntityTypeMapping TypeName="WeddingModel.Invited">
+        <MappingFragment StoreEntitySet="Invited">
+          <ScalarProperty Name="invited1" ColumnName="invited" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Kashrut">
+      <EntityTypeMapping TypeName="WeddingModel.Kashrut">
+        <MappingFragment StoreEntitySet="Kashrut">
+          <ScalarProperty Name="kashrut1" ColumnName="kashrut" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Opinion">
+      <EntityTypeMapping TypeName="WeddingModel.Opinion">
+        <MappingFragment StoreEntitySet="Opinion">
+          <ScalarProperty Name="idHall" ColumnName="idHall" />
+          <ScalarProperty Name="idSuppliers" ColumnName="idSuppliers" />
+          <ScalarProperty Name="idCustomer" ColumnName="idCustomer" />
+          <ScalarProperty Name="weddindDate" ColumnName="weddindDate" />
+          <ScalarProperty Name="rating" ColumnName="rating" />
+          <ScalarProperty Name="opinion1" ColumnName="opinion" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProductsToCustomers">
+      <EntityTypeMapping TypeName="WeddingModel.ProductsToCustomers">
+        <MappingFragment StoreEntitySet="ProductsToCustomers">
+          <ScalarProperty Name="idCategory" ColumnName="idCategory" />
+          <ScalarProperty Name="idHalls" ColumnName="idHalls" />
+          <ScalarProperty Name="idSuppliers" ColumnName="idSuppliers" />
+          <ScalarProperty Name="idCustomer" ColumnName="idCustomer" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Service">
+      <EntityTypeMapping TypeName="WeddingModel.Service">
+        <MappingFragment StoreEntitySet="Service">
+          <ScalarProperty Name="idCategory" ColumnName="idCategory" />
+          <ScalarProperty Name="serv" ColumnName="serv" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ServToSupp">
+      <EntityTypeMapping TypeName="WeddingModel.ServToSupp">
+        <MappingFragment StoreEntitySet="ServToSupp">
+          <ScalarProperty Name="idServ" ColumnName="idServ" />
+          <ScalarProperty Name="idSuppliers" ColumnName="idSuppliers" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Suppliers">
+      <EntityTypeMapping TypeName="WeddingModel.Suppliers">
+        <MappingFragment StoreEntitySet="Suppliers">
+          <ScalarProperty Name="idAddress" ColumnName="idAddress" />
+          <ScalarProperty Name="idArea" ColumnName="idArea" />
+          <ScalarProperty Name="idCategory" ColumnName="idCategory" />
+          <ScalarProperty Name="srcLogo" ColumnName="srcLogo" />
+          <ScalarProperty Name="src" ColumnName="src" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="activity_time" ColumnName="activity_time" />
+          <ScalarProperty Name="maxPrice" ColumnName="maxPrice" />
+          <ScalarProperty Name="minPrice" ColumnName="minPrice" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tasks">
+      <EntityTypeMapping TypeName="WeddingModel.Tasks">
+        <MappingFragment StoreEntitySet="Tasks">
+          <ScalarProperty Name="number" ColumnName="number" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TasksToCustomer">
+      <EntityTypeMapping TypeName="WeddingModel.TasksToCustomer">
+        <MappingFragment StoreEntitySet="TasksToCustomer">
+          <ScalarProperty Name="done" ColumnName="done" />
+          <ScalarProperty Name="idTask" ColumnName="idTask" />
+          <ScalarProperty Name="idCustomer" ColumnName="idCustomer" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

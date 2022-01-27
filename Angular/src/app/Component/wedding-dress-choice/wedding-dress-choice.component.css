@@ -1,0 +1,25 @@
+h2{
+    color:#88553b ;
+}
+div{
+    margin:5%;
+    font-size: 16px;
+}
+p{
+    margin: 0 0 16px;
+}
+
+.left{
+    float: left;
+    margin-right:2% ;
+}
+
+.right{
+    float: right;
+    margin-left: 2%;
+}
+
+img{
+    width: 43%;
+}
+

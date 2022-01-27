@@ -1,0 +1,77 @@
+
+div{
+  position: -webkit-sticky;
+  position: sticky;
+  /* position: fixed;
+  height: 8vh;
+  width: 100%; */
+  top: 0;
+  bottom: 0%;
+  background-color:#c08466;
+  overflow: auto;
+  z-index: 3;
+  padding: 0 0 5px 0;
+  /* padding: 50px;
+  font-size: 20px; */
+}
+
+img{
+  height: 7vh;
+  /* width: 7vw; */
+  float: right;
+  /* border-radius: 40px; */
+  /* margin-right: 46%; */
+}
+
+
+.matTooltip{
+  color:rgb(129, 125, 125)
+}
+
+button {
+  font-family: 'system-ui';
+  float: right;
+  font-size: 15px;
+  margin-right: 13px;
+  margin: 1% 1% 0% -0.5%;
+  background-color: #c08466;
+  color: white;
+  border: none;
+
+
+}
+/* span::after{
+    
+  transform: scaleX(0);
+    transform-origin:100% 50%; 
+  transition: transform 300ms ease-in-out; 
+  content: '';
+  border-bottom: #ffffff solid 2px;
+  display: block;
+  width: 0;
+  height: 1px;
+  transition: width .5s ease-in;
+}
+
+span:hover:after{
+  width: 100%;
+  transform: scaleX(1);
+   transform-origin:100% 50%;
+   } */
+
+
+.left {
+  float: left;
+  margin: 0.75% 2.5%;
+  padding: 1px;
+}
+
+::ng-deep.tooltip{
+  background-color:#c08466;
+}
+
+.material-icons{
+color:whitesmoke;
+/* color:#c08466; */
+}
+ 

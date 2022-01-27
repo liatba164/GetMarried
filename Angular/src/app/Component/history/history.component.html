@@ -1,0 +1,21 @@
+<h1>ההיסטוריה שלי</h1>
+
+<div>
+    <mat-card *ngFor="let item of HallsHistory" (click)="GetHallById(item.id)">
+        <img src={{item.src}}>
+        <mat-card-header>
+            <mat-card-title>{{item.name}}</mat-card-title>         
+        </mat-card-header>
+    </mat-card>
+</div>
+<div>
+    <mat-card *ngFor="let item of SupplierHistory" class="mat-card-supp" (click)="GetSupplierById(item.id)">
+        <img class="img_supp" src={{item.src}}>
+        <mat-card-header>
+            <mat-card-title>{{item.name}}</mat-card-title>
+        </mat-card-header>
+    </mat-card>
+</div>
+<div *ngIf="HallsHistory.length==0 && SupplierHistory.length==0">
+<p>עדיין אין היסטוריה</p>
+</div>

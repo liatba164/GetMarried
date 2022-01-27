@@ -1,0 +1,33 @@
+table{
+    width:80%;
+    margin:auto;
+}
+
+td.mat-cell,th.mat-header-cell{
+    text-align: center;
+    padding: 14px;
+}
+
+p{text-align: center;}
+
+h1{
+    /* margin-top: 2%; */
+        margin: 3% 0;
+    font-size: 35px;
+    
+  }
+
+  button{
+
+    border:none;
+    background-color: white;
+}
+.material-icons  {
+    color: #c08466;
+} 
+
+th{
+    font-size: 16px;
+    color: #88553b;
+    font-weight: bold
+}

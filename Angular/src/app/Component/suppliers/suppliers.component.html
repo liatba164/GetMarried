@@ -1,0 +1,29 @@
+
+<app-filter-suppliers [idCategory]="id" (passArray)="ShowSuppliersList($event)"></app-filter-suppliers>
+<div class="contain">
+    <h1>{{getCategory()}}</h1>
+    <mat-card *ngFor="let item of suppliersList">
+        <button (click)="toggleSelected(item.id)" *ngIf="cust!=null">
+            <mat-icon *ngIf="selected[item.id]" class="material-icons"> favorite </mat-icon>
+            <mat-icon *ngIf="!selected[item.id]" class="material-icons"> favorite_border </mat-icon>
+        </button>
+       <img src={{item.src}}>
+        
+        <hr>
+        <mat-card-header>
+            <mat-card-title>{{item.name}}</mat-card-title>
+            <span>{{GetAddressById(item.idAddress)}}</span>
+        </mat-card-header>
+
+        <mat-card-content>
+            <p class="description">{{sliceDescription(item.description)}}</p>
+        </mat-card-content>
+
+        <button mat-raised-button class="btn_search_suppliers" (click)="GetSupplierById(item.id)">לפרטים נוספים</button>
+
+
+    </mat-card>
+    <p *ngIf="filter==true" class="error">
+        לא נמצאו סינונים מתאימים
+    </p>
+</div>

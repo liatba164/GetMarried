@@ -1,0 +1,75 @@
+.mat-dialog-content{
+    width: 55vw;
+        height: 80vh;
+        direction: rtl;
+        text-align: right;
+}
+h1{
+    margin: 6% 0 3%;
+
+font-size: 35px;
+}
+.close{
+    float:right;
+    border:none;
+    margin: auto;
+    background-color: white;
+    margin: auto;
+    width:5%;
+}
+
+
+.mat-form-field{
+text-align: right;
+    width: 28%;
+    margin: 2%;
+}
+
+.service{
+    width: 80%;
+}
+
+.description{
+    width: 92%;
+    height: 10%;
+}
+
+form{
+    /* width: 45%; */
+    text-align: center;
+    margin:2% auto;
+    padding: 1%;
+}
+
+button{
+    font-family: 'system-ui';
+    border-radius: 18px;
+    background-color: rgb(192 132 102 / 92%);
+    width: 9vw;
+    border: none;
+    margin: auto 40%;
+    padding: 1%;
+    font-size: 18px;
+  }
+
+  textarea{
+    height: 18vh;
+  }
+
+  input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none; 
+    margin: 0; 
+}
+  .add_img{
+    margin: 2% 0;
+    }
+    
+    img{
+      width: 21%;
+      height: 20vh;
+      margin: 2%;
+    }
+    .img_gallery{
+    display: inline;
+    }

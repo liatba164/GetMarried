@@ -1,0 +1,68 @@
+.contain{
+  background-position: center;
+  width: 25vw;
+  height: 65vh;
+  margin: 6% auto 1%;
+  background-color: white;
+  border:1px solid #dbdbdb;
+}
+
+form{
+  padding: 3px;
+}
+
+.sign_up{
+  background-position: center;
+  width: 25vw;
+  margin: 0% auto 6%;
+  background-color: white;
+  border:1px solid #dbdbdb;
+}
+
+h1{
+  
+    margin: 3% 0 9%;
+  font-size: 35px;
+  
+}
+
+
+.mat-icon-button{
+      background-color: rgba(0, 0, 0, 0);
+     font-family: 'Material Icons';
+     color:rgb(0, 0, 0);
+    margin: 0px 0px  0px -6px;
+     border: none; 
+}
+
+button{
+  border-radius: 18px;
+  text-align: center;
+  margin: 3% auto;
+  display: block;
+  background-color: rgb(192 132 102 / 92%);
+  width: 8vw;
+
+}
+
+.mat-form-field{  
+  font-weight: bold;
+  width: 20vw;
+  padding: 7px;
+  text-align: right;
+  margin: 0% 6%;
+}
+
+p{
+  margin: 14px;
+  text-align: center;
+}
+
+
+.message{
+  margin: 0px 20px 35px 0px;
+ padding:9px;
+}
+
+
+ 

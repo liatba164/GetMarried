@@ -1,0 +1,40 @@
+<mat-dialog-content>
+  <button type="button" class="close" mat-dialog-close>
+    <mat-icon class="material-icons icon">close</mat-icon>
+  </button>
+  <form [formGroup]="opinion" (ngSubmit)="AddOpinion()">
+
+    <h1> הוסף חוות דעת</h1>
+    <p>דרג את השירות</p>
+    
+    <div class="block">
+      <button type="button" mat-icon-button *ngFor="let ratingId of ratingArr;index as i " [id]="'star_'+i" (click)="onClick(i+1)"
+        matTooltipPosition="above">
+        <mat-icon class="material-icons icon">
+          {{showIcon(i)}}
+        </mat-icon>
+      </button>
+    </div>
+
+
+
+    <mat-form-field appearance="fill">
+      <mat-label>בחר את תאריך החתונה שלך</mat-label>
+      <input matInput formControlName="date" [matDatepicker]="picker" >
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker   disabled="false"></mat-datepicker>
+      <mat-error>{{getErrorDate()}}</mat-error>
+    </mat-form-field>
+
+    <div>
+      <mat-form-field appearance="fill">
+        <mat-label>רשום פה חוות דעת</mat-label>
+        <textarea matInput formControlName="text" ></textarea>
+        <mat-error>{{getErrorText()}}</mat-error>
+      </mat-form-field>
+    </div>
+
+    <button class="btn">הוסף</button>
+  </form>
+
+</mat-dialog-content>

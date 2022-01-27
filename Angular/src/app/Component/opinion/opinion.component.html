@@ -1,0 +1,54 @@
+<div class="reviews">
+  <h1> חוות דעת - {{getName()}}</h1>
+
+
+
+
+  <!-- *ngIf="opinionList.length!=0" -->
+  <div>
+
+
+    <div *ngIf="opinionList.length!=0" class="add_opinion">רוצה להוסיף חוות דעת?
+      <button (click)="openDialog()">לחץ כאן</button>
+    </div>
+    <mat-card *ngFor="let item of opinionList">
+      <div class="details right">
+        <div class="img-cluster right">
+          <img src="{{getProfileImg(item.idCustomer)}}">
+        </div>
+        <div class="details-cluster right">
+          <!--שולמית לוי  -->
+          <p>{{GetCustomerById(item.idCustomer)}}</p>
+          <!--12/8/2022   -->
+          <p>{{item.weddindDate | date: "dd-MM-yyyy" }} </p>
+
+          <!-- *ngIf="item.rating!=starCount" -->
+          <span *ngFor="let ratingId of ratingArr;index as i ">
+            <mat-icon class="material-icons icon">
+              {{showIcon(item.rating,i)}}
+            </mat-icon>
+          </span>
+
+
+        </div>
+      </div>
+
+      <div class="opinino">
+        <p>{{item.opinion1}} </p>
+      </div>
+
+    </mat-card>
+
+
+
+
+  </div>
+  <div>
+    <p *ngIf="opinionList.length==0" class="add_opinion">לא נמצאו חוות דעת <br /> רוצה להיות הראשון שיוסיף?
+      <button (click)="openDialog()"> לחץ כאן</button>
+    </p>
+
+
+  </div>
+
+</div>

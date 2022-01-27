@@ -1,0 +1,200 @@
+<h1>הוספת ספק</h1>
+
+<!-- [(value)]="selectedItem" -->
+<form [formGroup]="supplier" (ngSubmit)="add()">
+
+
+
+
+
+  <mat-form-field appearance="fill" class="block">
+    <mat-label>בחר קטגוריה</mat-label>
+    <mat-select name="category" formControlName="category" (ngModelChange)='onChange()'>
+      <mat-option *ngFor="let category of categoryList" [value]="category.name">
+        {{category.name}}
+      </mat-option>
+    </mat-select>
+    <mat-error>{{getCategoryError()}}</mat-error>
+
+  </mat-form-field>
+
+
+  <div>
+    <mat-form-field appearance="fill" class="block">
+      <mat-label>שם העסק</mat-label>
+      <input matInput formControlName="name">
+      <mat-error>{{getNameError()}}</mat-error>
+    </mat-form-field>
+  </div>
+
+  <div>
+    <mat-form-field appearance="fill" class="block">
+      <mat-label>פלאפון</mat-label>
+      <input type="tel" matInput formControlName="phone">
+      <mat-icon class="material-icons" matSuffix>phone</mat-icon>
+      <mat-error>{{getErrorPhone()}}</mat-error>
+    </mat-form-field>
+  </div>
+
+  <div>
+    <div>
+      <!-- [(value)]="selectedAreaItem" -->
+      <mat-form-field appearance="fill" class="block">
+        <mat-label>בחר אזור</mat-label>
+        <mat-select name="area" formControlName="area">
+          <mat-option *ngFor="let area of AreaList" [value]="area.area1">
+            {{area.area1}}
+          </mat-option>
+        </mat-select>
+        <mat-error>{{getAreaError()}}</mat-error>
+      </mat-form-field>
+    </div>
+
+    <div>
+      <mat-form-field appearance="fill" class="inline margin">
+        <mat-label>עיר</mat-label>
+        <input matInput formControlName="city">
+        <mat-error>{{getCityError()}}</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="inline margin">
+        <mat-label>רחוב</mat-label>
+        <input matInput formControlName="street">
+        <mat-error> {{getStreetError()}}</mat-error>
+
+      </mat-form-field>
+
+
+      <mat-form-field appearance="fill" class="inline">
+        <mat-label>מספר</mat-label>
+        <input matInput class="example-right-align " formControlName="number">
+        <mat-error>{{getNumberError()}}</mat-error>
+      </mat-form-field>
+    </div>
+    <mat-form-field appearance="fill" class="block">
+      <mat-label>תיאור על הספק</mat-label>
+      <textarea matInput formControlName="description"></textarea>
+    </mat-form-field>
+
+  </div>
+  <div *ngIf="this.supplier.get('category')?.value==categoryList[0].name &&this.supplier.get('category')?.value!=''">
+
+    <mat-form-field appearance="fill" class="width margin">
+      <mat-label>בחר כשרות</mat-label>
+      <mat-select name="kashrut" formControlName="kashrut" (ngModelChange)='onChangeKashrut()'>
+        <mat-option *ngFor="let kashrut of kashrutList" [value]="kashrut.kashrut1">
+          {{kashrut.kashrut1}}
+        </mat-option>
+      </mat-select>
+      <mat-error>{{getKashrutError()}}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="width ">
+      <mat-label>סוג אולם</mat-label>
+      <mat-select name="hallType" formControlName="hallType" (ngModelChange)='onChangeIdtype()'>
+        <mat-option *ngFor="let hallType of hallTypeList" [value]="hallType.type">
+          {{hallType.type}}
+        </mat-option>
+      </mat-select>
+      <mat-error>{{getHallTypeError()}}</mat-error>
+    </mat-form-field>
+
+
+    <mat-form-field appearance="fill" class="width margin">
+      <mat-label> מחיר מנה (מינימום)</mat-label>
+      <input matInput type="number" class="example-right-align" formControlName="minPrice" placeholder="0">
+      <span matPrefix>₪ &nbsp;</span>
+      <mat-error>{{getMinPriceError()}}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="width">
+      <mat-label> מחיר מנה (מקסימום)</mat-label>
+      <input matInput type="number" class="example-right-align " formControlName="maxPrice" placeholder="0">
+      <span matPrefix>₪ &nbsp;</span>
+      <mat-error>{{getMaxPriceError()}}</mat-error>
+    </mat-form-field>
+
+
+    <mat-form-field appearance="fill" class="width margin">
+      <mat-label> מספר מוזמנים (מינימום)</mat-label>
+      <input matInput type="number" class="example-right-align" formControlName="minInvited" placeholder="0">
+      <mat-error>{{getMinInvitedError()}}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="width">
+      <mat-label> מספר מוזמנים (מקסימום)</mat-label>
+      <input matInput type="number" class="example-right-align " formControlName="maxInvited" placeholder="0">
+      <mat-error>{{getMaxInvitedError()}}</mat-error>
+    </mat-form-field>
+
+
+  </div>
+
+  <div *ngIf="this.supplier.get('category')?.value!=categoryList[0].name && this.supplier.get('category')?.value!=''">
+    <mat-form-field appearance="fill" class="width margin">
+      <mat-label>מחיר מינימום</mat-label>
+      <input matInput type="number" class="example-right-align " formControlName="minPrice" placeholder="0">
+      <span matPrefix>₪ &nbsp;</span>
+      <mat-error>{{getMinPriceError()}}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="width">
+      <mat-label>מחיר מקסימום</mat-label>
+      <input matInput type="number" class="example-right-align " formControlName="maxPrice" placeholder="0">
+      <span matPrefix>₪ &nbsp;</span>
+      <mat-error>{{getMaxPriceError()}}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="block">
+      <mat-label>שעות פעילות</mat-label>
+      <input matInput formControlName="activity_time" placeholder="לדוגמא: 10:00-19:00">
+      <mat-error>{{getErrorActivityTime()}}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="block">
+      <mat-label>בחר שירות</mat-label>
+      <mat-select name="service" formControlName="service" multiple>
+        <mat-option *ngFor="let serv of serviceList" [value]="serv.serv">
+          {{serv.serv}}
+        </mat-option>
+      </mat-select>
+      <mat-error>{{getServiceError()}}</mat-error>
+
+    </mat-form-field>
+
+  </div>
+
+
+
+  <div class="add_img">
+    <span>הוסף תמונה ראשית</span> <br />
+    <input type="file" name="בחר תמונה" accept="Image/*" (change)="onSelectImg($event,1)" />
+  </div>
+  <img *ngIf="home_url!=''" src="{{home_url}}">
+
+
+  <div class="add_img">
+    <span>הוסף לוגו</span><br />
+    <input type="file" value="בחר תמונה" accept="Image/*" (change)="onSelectImg($event,2)" />
+  </div>
+  <img *ngIf="logo_url!=''" src="{{logo_url}}">
+
+
+  <div class="add_img">
+    <span>הוסף גלריית תמונות</span><br />
+    <input type="file" name="בחר תמונה" accept="Image/*" (change)="onSelectFile($event)" multiple />
+  </div>
+  <div *ngFor="let item of Images" class="img_gallery">
+    <!-- <button (click)="deleteImg(item.src)" class="delete_btn">
+      <mat-icon class="material-icons">delete_outline</mat-icon>
+    </button>  -->
+    <img src="{{item.src}}">
+
+  </div>
+
+
+
+  <!-- (click)="add()" -->
+  <div> <button type="submit">הוספה</button></div>
+
+</form>

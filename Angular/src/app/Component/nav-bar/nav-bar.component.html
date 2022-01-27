@@ -1,0 +1,30 @@
+<div>
+
+  <a href="">
+    <img src="assets/Image/Home/Logo.png">
+  </a>
+  <button *ngIf="this.cust==null && this.manager==null" (click)="onClkLink('log-in')" class="left"
+    matTooltip="כניסה | התחברות" matTooltipClass="tooltip">
+    <mat-icon class="material-icons">person_outline</mat-icon>
+  </button>
+  <button *ngIf="this.cust!=null" (click)="onClkLink('PersonalCenter/Profile')" class="left" matTooltip="אזור אישי"
+    matTooltipClass="tooltip">
+    <mat-icon class="material-icons">person</mat-icon>
+  </button>
+  <button *ngIf="this.manager!=null" (click)="onClkLink('PersonalCenterManager/ShowNewSupplier')" class="left"
+    matTooltip="אזור אישי" matTooltipClass="tooltip">
+    <mat-icon class="material-icons">person</mat-icon>
+  </button>
+  <button (click)="onClkLink('Halls')"><span>אולמות אירועים</span> </button>
+  <button (click)="onClkLink('Suppliers/2')"><span>שמלות כלה</span></button>
+  <button (click)="onClkLink('Suppliers/3')"><span>איפור כלות</span></button>
+  <button (click)="onClkLink('Suppliers/4')"><span>עיצוב שיער</span></button>
+  <button (click)="onClkLink('Suppliers/5')"><span>חליפות חתן</span></button>
+  <button (click)="onClkLink('Suppliers/6')"><span>צילום אירועים</span></button>
+  <button (click)="onClkLink('Suppliers/7')"><span>די-ג'י</span></button>
+
+
+
+
+
+</div>

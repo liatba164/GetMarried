@@ -1,0 +1,58 @@
+.filter{
+  margin:7% 2% 18%;
+ } 
+ 
+ .material-icons{
+   color:#9e5430 ;
+ }
+ 
+ .mat-slider {
+   margin: 5% 8% -4%;
+   width: 14vw;
+   padding: 0%;
+ }
+ 
+ .mat-tree{
+   background-color: #fafafa;
+ }
+ 
+ .left{
+ float:left;
+ }
+ 
+ button{
+   border:none;
+   padding: 2px;
+ 
+ }
+ 
+ span{
+   display:block;
+   margin: 20px 24px 2px;
+ }
+ 
+ ::ng-deep .mat-checkbox-checked.mat-accent .mat-checkbox-background {
+   background-color: #c08466!important;
+ }
+ /* צבע הצל בעת לחיצה */
+ ::ng-deep .mat-checkbox-ripple .mat-ripple-element {
+   background-color: #c08466 !important;
+ }
+ 
+ .mat-checkbox {
+   padding-left: 7px;
+ }
+ 
+ ::ng-deep .mat-accent .mat-slider-thumb {
+   background-color:#c08466;
+ } 
+ ::ng-deep .mat-accent .mat-slider-thumb-label {
+   background-color: #c08466;
+ } 
+ ::ng-deep .mat-accent .mat-slider-track-fill {
+   background-color: #c08466;
+ } 
+
+ .mat-slider-horizontal .mat-slider-thumb-label {
+   padding: 2%;
+ }

@@ -1,0 +1,16 @@
+
+body {direction: rtl;
+  background-color: #fafafa;
+  margin: 0;
+  /* height: auto; */
+ }
+
+
+h1{
+    color:#88553b;
+    text-align: center;
+}
+
+/* font-family: Roboto, "Helvetica Neue", sans-serif; */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+

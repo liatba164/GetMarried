@@ -1,0 +1,81 @@
+<div>
+    <img class="home_img" src={{hall.src}}>
+    <button (click)="toggleSelected(hall.id)" *ngIf="cust!=null">
+        <mat-icon *ngIf="selected" class="material-icons"> favorite </mat-icon>
+        <mat-icon *ngIf="!selected" class="material-icons"> favorite_border </mat-icon>
+    </button>
+</div>
+<div style="width: 90vw; margin:auto ;">
+    <!-- דיב לראש הדף -->
+    <div class="filter-container">
+        <div class="main-info-box filter-box">
+            <h2>{{hall.name}}</h2>
+            <img class="logo" src="{{hall.srcLogo}}">
+        </div>
+
+        <div class="filter-box">
+            <mat-icon class="material-icons"> room_service</mat-icon>
+            <p><u>כשרות</u></p>
+            <p>{{kashrut.kashrut1}}</p>
+
+        </div>
+
+        <div class="filter-box">
+            <mat-icon class="material-icons"> restaurant_menu</mat-icon>
+            <p class="mini-titel"><u>מחיר מנה</u> </p>
+            <p> {{hall.maxPrice}} - {{hall.minPrice}}</p>
+        </div>
+
+        <div class="filter-box">
+            <mat-icon class="material-icons">people</mat-icon>
+            <p><u>מספר מוזמנים</u> </p>
+            <p> {{hall.maxInvited}} - {{hall.minInvited}}</p>
+        </div>
+
+
+        <div class="filter-box">
+            <mat-icon class="material-icons">search</mat-icon>
+            <p><u>סוג אולם</u> </p>
+            <p> {{hallType.type}}</p>
+        </div>
+
+
+        <div class="filter-box">
+            <mat-icon class="material-icons">location_on</mat-icon>
+            <p><u>אזור</u></p>
+            <p>{{area.area1}}</p>
+        </div>
+    </div>
+
+    <!-- תוכן לאמצע הדף -->
+    <div class="description">
+        <div class="right-side">
+
+
+            <h1 *ngIf="hall.idtype==2">{{hall.name}} - גני אירועים</h1>
+            <h1 *ngIf="hall.idtype==1">{{hall.name}} - אולמות אירועים</h1>
+            <p> {{hall.description}}</p>
+        </div>
+        <!-- מיקום העסק -->
+        <div class="left-side">
+            <div class="address-phone">
+                <mat-icon class="material-icons icon">phone</mat-icon>
+                <!-- טלפון: -->
+                <span> {{hall.phone}} </span>
+            </div>
+
+            <div class="address-phone">
+                <mat-icon class="material-icons icon">location_on</mat-icon>
+                <!-- :כתובת -->
+                <span> {{address.street}} {{address.number}}, {{address.city}}</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="gallery">
+        <span *ngFor="let item of img">
+            <img class="img_gallery" src={{item.src}}>
+        </span>
+    </div>
+    <app-opinion [hall]="hall"></app-opinion>
+</div>

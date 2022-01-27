@@ -1,0 +1,52 @@
+
+
+mat-sidenav-container{
+    min-height: 92vh;
+    /* direction: rtl; */
+    /* overflow-y: hidden; */
+}
+
+mat-sidenav,mat-sidenav-content{
+    padding:16px;
+ 
+}
+
+mat-sidenav{
+    width: 250px; 
+}
+
+.menu{
+    top: 12px;
+    position: absolute;
+    border: none;
+    background-color: rgb(250 250 250);
+}
+
+.close{
+    background-color: white;
+    border: none;
+    color: #88553b;
+    padding: 0;
+}
+
+span{
+    font-size: 18px;
+    color: #88553b;
+
+}
+
+div{
+    padding: 5px 0px;
+    margin: 5px 0px;
+    overflow: auto;
+}
+
+
+.material-icons{
+    margin: 0px 0 0 4px;
+    color: #88553b;
+    vertical-align: middle;
+    position: relative;
+    top: -2px;
+}
+

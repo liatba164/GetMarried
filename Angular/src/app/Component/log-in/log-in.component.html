@@ -1,0 +1,49 @@
+
+<div class="contain">
+    <form [formGroup]="logIn" (ngSubmit)="logInSubmit()">
+        <h1>התחברות</h1>
+        <div class="container">
+            <div>
+                <mat-form-field appearance="fill">
+                    <mat-label>דואר אלקטרוני</mat-label>
+                    <input matInput formControlName="emaillogin">
+                    <mat-icon class="material-icons" matSuffix>email</mat-icon>
+                    <mat-error>
+                        {{getErrorEmailLogIn()}}
+                    </mat-error>
+                </mat-form-field>
+            </div>
+
+            <div>
+                <mat-form-field appearance="fill">
+                    <mat-label>הכנס סיסמא</mat-label>
+                    <input matInput [type]="hideLog ? 'password' : 'text'" formControlName="password">
+                    <button mat-icon-button matSuffix type="button" (click)="hideLog = !hideLog"
+                        [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hideLog">
+                        <mat-icon class="material-icons"> {{hideLog ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    </button>
+                    <mat-error>
+                        {{getErrorPasswordLogIn()}}
+                    </mat-error>
+                </mat-form-field>
+            </div>
+
+            <div class="message">
+                <mat-error>{{message}}</mat-error>
+            </div>
+
+        </div>
+        <button mat-flat-button mat-button type="submit">כניסה</button>
+
+    </form>
+    <p>
+        שכחת סיסמא?
+        <a  (click)="openDialog()"> <u> לחץ כאן </u></a>
+    </p>
+</div>
+
+
+
+<div class="sign_up">
+    <p>אין לך חשבון? <a routerLink="/sign-up">להרשמה</a></p>
+</div>

@@ -1,0 +1,59 @@
+ *{
+      text-align: center; 
+ }
+section{
+  margin:5% auto;
+  width: 50vw;
+}
+#txt{
+font-size: 16px;
+width:60%;
+margin: auto;
+}
+
+h1{
+  margin: 3% 0;
+font-size: 35px;
+}
+h2{
+  font-weight: bold;
+  color:#ffffff ; 
+  text-align: center; 
+}
+
+div{
+  padding:1% 0;
+  margin:1% 0 ;
+}
+#first{
+  background-color:#f4dec7;
+}
+#second{
+  background-color:#f1c3b3;
+ }
+#third{
+  background-color: #d29d8b  ;
+} 
+#fourth{
+ 
+  background-color:#b97d65; 
+}
+#fifth{
+  background-color:#976551 ; 
+}
+#sixth{
+  background-color:#6f4737; 
+}
+
+::ng-deep .mat-checkbox-checked.mat-accent .mat-checkbox-background {
+  background-color: #bc7154!important;
+
+}
+/* צבע הצל בעת לחיצה */
+::ng-deep .mat-checkbox-ripple .mat-ripple-element {
+  background-color: #c08466 !important;
+}
+
+.mat-checkbox{
+    padding-left: 7px ;
+}

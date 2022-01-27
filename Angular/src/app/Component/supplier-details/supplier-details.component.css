@@ -1,0 +1,126 @@
+
+p{
+    font-size: 16px;
+}
+
+
+.home_img{
+    background-size: 19vw 48vh;
+    background-repeat: no-repeat;
+    background-position: top;
+    height: 75vh; 
+    width: 96vw;
+    margin: 0px 11px 0px 0px;
+    float: none;
+}
+
+h1{
+    margin: 3% 0;
+font-size: 35px;
+}
+
+button{
+    bottom: 16%;
+    left: 20px;
+    border-radius: 64%;
+    position: absolute;
+    padding: 4px 6px;
+    border: none;
+    background-color:#fafafa;
+}
+
+img{
+    height: 50vh;
+    width: 30vw;
+}
+
+.logo{
+    display: inline;
+    max-width: 45%;
+    max-height: 70%;
+}
+.filter-container{
+    width: 96%;
+    height: 228px;
+    margin: 2%;
+    box-shadow: 0px 0px 8px grey;
+}
+
+.filter-box{
+    text-align: center;
+    display: block;
+    width: 13%;
+    height: 228px;
+    box-sizing: border-box;
+    float: left;
+    border-right: 1px solid #b9b9b9;
+    padding: 0 10px;
+    direction: rtl;
+}
+
+.main-info-box
+{
+    float: right;
+    height: 100%;
+    text-align: right;
+    padding-right: 65px;
+}
+
+.material-icons{
+    display: block;
+    color:#9e5430;
+    margin: 10px;
+    font-size: 46px;
+}
+.icon{
+    float: right;
+    display: inline;
+    font-size: 26px;
+    margin: 1px;
+    padding: 2px;
+}
+
+.description{
+    margin: 2vw;
+    padding: 1%;
+    height: 45vh;
+}
+.address-phone{
+    margin: 7px;
+    padding: 5px;
+    font-size: 15px;
+    height: 4vh;
+}
+.right-side{
+    float:right;
+    width:65%;
+}
+.left-side{
+    margin-top: 30px;
+    float:left;
+    width:30%;
+}
+
+.gallery{
+    column-count: 3;
+    margin: 6% 0;
+}
+
+.img_gallery{
+    max-width: 29vw;
+    margin: 1%;
+    height: auto;
+    transition: transform .8s;
+}
+
+.img_gallery:hover {
+    opacity: 70%;
+    transform: scale(0.95); 
+  }
+
+
+.reviews{
+    position: absolute;
+    height: 40vh;
+    top: auto;
+}

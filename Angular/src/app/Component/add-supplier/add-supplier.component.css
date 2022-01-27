@@ -1,0 +1,76 @@
+
+form{
+    width: 45%;
+    margin:2% auto;
+    direction: rtl;
+    padding: 1%;
+}
+h1{
+  margin-top: 2%;
+
+font-size: 35px;
+}
+.mat-form-field,mat-option{
+    text-align: right;
+  margin-bottom: 2%;
+}
+
+textarea{
+  height: 15vh;;
+}
+
+button{
+    font-family: 'system-ui';
+    border-radius: 18px;
+    background-color: rgb(192 132 102 / 92%);
+    width: 9vw;
+    border: none;
+    margin: auto 40%;
+    padding: 1%;
+    font-size: 18px;
+  }
+
+.block{
+    display: block;
+}
+.example-right-align {
+    text-align: left;
+    display: inline-flex;
+  }
+input.example-right-align::-webkit-outer-spin-button,
+input.example-right-align::-webkit-inner-spin-button {
+  display: none;
+}
+
+.inline{
+    display: inline-flex;
+   
+} 
+.margin{
+    margin-left: 4.4%;
+}
+.width{
+    width: 47.5%;
+    /* margin-left: 20%; */
+}
+
+.add_img{
+margin: 2% 0;
+}
+
+img{
+  width: 21%;
+  height: 20vh;
+  margin: 2%;
+}
+.img_gallery{
+display: inline;
+}
+
+.delete_btn{
+  margin: auto;
+  padding: 0;
+  width: 0;
+  color: rgb(192 132 102 /92%);
+
+}

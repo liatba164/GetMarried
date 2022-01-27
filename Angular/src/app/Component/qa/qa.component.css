@@ -1,0 +1,29 @@
+h1{
+    margin:7% 0 1%;
+}
+
+h2{
+    text-align: center;
+}
+
+div{
+    width:82%;
+   margin:auto;
+}
+
+img{
+    width: 35vw;
+    height: 50vh;
+    display: block;
+margin:35px auto;
+}
+
+.ques{
+    font-weight: bold;
+    color:  #c08466;
+    margin-bottom: 3px;
+}
+
+p{
+    font-size: 17px;
+}

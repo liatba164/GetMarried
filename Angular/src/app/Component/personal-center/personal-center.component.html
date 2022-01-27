@@ -1,0 +1,35 @@
+<mat-sidenav-container>
+  <mat-sidenav #sidenav mode="over" position="end" [(opened)]="opened">
+    <div >
+      <button (click)="sidenav.close()" class="close">
+        <mat-icon class="material-icons">arrow_forward</mat-icon>
+      </button>
+      <div routerLink="/PersonalCenter/Profile" (click)="sidenav.close()">
+        <mat-icon class="material-icons">person_outline</mat-icon><span> פרופיל</span>
+      </div>
+      <div routerLink="/PersonalCenter/ProductToCustomer" (click)="sidenav.close()">
+        <mat-icon class="material-icons">favorite_border</mat-icon><span>מעודפים שלי</span>
+      </div>
+      <div routerLink="/PersonalCenter/CheckList" (click)="sidenav.close()">
+        <mat-icon class="material-icons">check_circle_outline</mat-icon><span>המשימות שלי</span>
+      </div>
+      <div routerLink="/PersonalCenter/history" (click)="sidenav.close()">
+        <mat-icon class="material-icons">history</mat-icon><span>ההיסטוריה שלי</span>
+      </div>
+      <div (click)="openDialog()">
+        <mat-icon class="material-icons">power_settings_new</mat-icon><span>התנתקות</span>
+      </div>
+    </div>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <main>
+      <router-outlet></router-outlet>
+    </main>
+    <button (click)="sidenav.open()" class="menu">
+      <mat-icon class="material-icons">menu</mat-icon>
+    </button>
+  </mat-sidenav-content>
+
+
+</mat-sidenav-container>
